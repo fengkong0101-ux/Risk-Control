@@ -282,9 +282,8 @@
           Import JSON <input id="importFile" type="file" accept="application/json" style="display: none;">
         </label>
         <button id="resetBtn" class="small ghost admin-only">Reset to default</button>
-        <button id="clearStorage" class="small ghost admin-only danger">Clear LocalStorage</button>
       </div>
-      <div class="hint">Lưu ý: dữ liệu mặc định sẽ lưu trong trình duyệt. Dùng Export để chia sẻ (file .json).</div>
+      <div class="hint">Lưu ý: dữ liệu sẽ được tải từ file data.json. Dùng Export để chia sẻ (file .json).</div>
     </div>
 
     <hr style="margin: 12px 0; border: none; border-top: 1px dashed #eef3fb;">
@@ -310,7 +309,6 @@ const clearForm = document.getElementById('clearForm');
 const exportBtn = document.getElementById('exportBtn');
 const importFile = document.getElementById('importFile');
 const resetBtn = document.getElementById('resetBtn');
-const clearStorage = document.getElementById('clearStorage');
 
 const loginBtn = document.getElementById('loginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -325,7 +323,7 @@ const copyOutputBtn = document.getElementById('copyOutputBtn');
 const ADMIN_PASSWORD = 'admin'; // <-- đổi giá trị nếu cần
 const ADMIN_LS_KEY = 'isAdmin_v1';
 
-/* ------------------ DỮ LIỆU MẶC ĐỊNH (dùng \n để xuống dòng đúng) ------------------ */
+/* ------------------ DỮ LIỆU MẶC ĐỊNH ------------------ */
 const DEFAULT_DATA = [
   { system: "RUMMY", group: "TRÙNG IP", title: "RUMMY TRÙNG IP", content: "会员ID : \n*拒绝原因 : 我本人没有充值，上级有多个IP地址，不符合RUMMY MATCH的提现条件。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励" },
   { system: "RUMMY", group: "KHÔNG NẠP", title: "RUMMY KHÔNG NẠP", content: "会员ID : \n*拒绝原因 : 我和上级都领取了奖励，但还未充值，未达到提现奖励的条件。\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。" },
@@ -333,30 +331,11 @@ const DEFAULT_DATA = [
   { system: "CHƠI MỨC CƯỢC QUÁ THẤP", group: "TỈ LỆ THẤP", title: "CHƠI MỨC CƯỢC QUÁ THẤP - TỈ LỆ THẤP", content: "会员ID : \n*拒绝原因 : 故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 : 让会员继续下注" }
 ];
 
-/* ------------------ LƯU TRỮ ------------------ */
-const LS_KEY = 'riskData_v1';
-let data = loadData();
-
+/* ------------------ DATA HIỆN TẠI ------------------ */
+let data = [];
 let editIndex = -1;
 
-/* ------------------ load/save ------------------ */
-function saveData() {
-  localStorage.setItem(LS_KEY, JSON.stringify(data));
-}
-function loadData() {
-  try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (raw) return JSON.parse(raw);
-  } catch (e) { console.warn('LocalStorage read error', e); }
-  return JSON.parse(JSON.stringify(DEFAULT_DATA));
-}
-function resetToDefault() {
-  data = JSON.parse(JSON.stringify(DEFAULT_DATA));
-  saveData();
-  refreshUI();
-}
-
-/* ------------------ PERMISSION ------------------ */
+/* ------------------ CHỨC NĂNG QUYỀN ------------------ */
 function isAdmin() { return localStorage.getItem(ADMIN_LS_KEY) === '1'; }
 function applyPermission() {
   document.querySelectorAll('.admin-only').forEach(el => {
@@ -375,7 +354,7 @@ function applyPermission() {
   }
 }
 
-/* ------------------ UI populate ------------------ */
+/* ------------------ CHỨC NĂNG HIỂN THỊ ------------------ */
 function getUniqueSystems(){ return [...new Set(data.map(d=>d.system))].sort(); }
 function getGroupsFor(system){ return [...new Set(data.filter(d=>d.system===system).map(d=>d.group))].sort(); }
 
@@ -419,7 +398,7 @@ function populateContent(){
     output.textContent = 'Chọn Hệ để xem nội dung';
     return;
   }
-  let items;
+  let items = [];
   if (!grp) items = data.filter(d=>d.system===sys);
   else items = data.filter(d=>d.system===sys && d.group===grp);
   if (items.length) {
@@ -429,7 +408,7 @@ function populateContent(){
   }
 }
 
-/* ------------------ RENDER LIST - only create admin buttons when isAdmin() ------------------ */
+/* ------------------ HIỂN THỊ DANH SÁCH ------------------ */
 function renderList(){
   listArea.innerHTML = '';
   const q = (searchBox.value||'').trim().toLowerCase();
@@ -446,19 +425,16 @@ function renderList(){
     meta.appendChild(h4); meta.appendChild(p);
 
     const actions = document.createElement('div'); actions.className = 'actions';
-
-    // Copy button - available to all users
     const btnCopy = document.createElement('button');
     btnCopy.className = 'small btn-copy';
     btnCopy.textContent = 'Sao chép';
     btnCopy.onclick = () => {
       navigator.clipboard.writeText(d.content)
-        .then(()=> { /* tiny visual feedback */ alert('Nội dung đã được sao chép!'); })
+        .then(()=> alert('Nội dung đã được sao chép!'))
         .catch(()=> alert('Sao chép thất bại'));
     };
     actions.appendChild(btnCopy);
 
-    // Only create edit/delete buttons when logged in as admin
     if (isAdmin()) {
       const btnEdit = document.createElement('button');
       btnEdit.textContent = 'Sửa';
@@ -470,11 +446,9 @@ function renderList(){
       btnDel.textContent = 'Xóa';
       btnDel.className = 'small btn-delete';
       btnDel.onclick = () => {
-        // Double-check permission at action time (server-side would be required in real app)
         if (!isAdmin()) { alert('Bạn không có quyền xóa'); return; }
         if (confirm('Xác nhận xóa mục này?')) {
           data.splice(idx, 1);
-          saveData();
           populateSystems();
         }
       };
@@ -487,7 +461,7 @@ function renderList(){
   });
 }
 
-/* ------------------ CRUD ------------------ */
+/* ------------------ THÊM / SỬA ------------------ */
 addButton.addEventListener('click', () => {
   const sys = newSystem.value.trim();
   const grp = newGroup.value.trim();
@@ -498,9 +472,9 @@ addButton.addEventListener('click', () => {
     return;
   }
   data.push({system: sys, group: grp, title: title, content: cont});
-  saveData();
   clearInputs();
-  // After add, show new data as selected system/group
+  populateSystems();
+  // Sau khi thêm, chọn hệ và nhóm mới
   systemSelect.value = sys;
   populateGroups();
   groupSelect.value = grp;
@@ -531,7 +505,6 @@ updateButton.addEventListener('click', () => {
     return;
   }
   data[editIndex] = {system: sys, group: grp, title: title, content: cont};
-  saveData();
   editIndex = -1;
   clearInputs();
   addButton.style.display = 'inline-block';
@@ -559,7 +532,7 @@ importFile.addEventListener('change', (e) => {
       const arr = JSON.parse(reader.result);
       if (!Array.isArray(arr)) throw new Error('File không đúng định dạng (cần mảng JSON)');
       if (confirm('Nhập file sẽ **thay thế** dữ liệu hiện tại. Bạn có muốn tiếp tục?')) {
-        data = arr; saveData(); populateSystems(); alert('Nhập file thành công');
+        data = arr; populateSystems(); alert('Nhập file thành công');
       }
     } catch(err) {
       alert('Lỗi khi đọc file: '+err.message);
@@ -570,14 +543,10 @@ importFile.addEventListener('change', (e) => {
 
 resetBtn.addEventListener('click', () => {
   if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để reset'); return; }
-  if (confirm('Reset về dữ liệu mặc định?')) resetToDefault();
-});
-
-clearStorage.addEventListener('click', () => {
-  if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để xóa LocalStorage'); return; }
-  if (confirm('Xóa toàn bộ LocalStorage (dữ liệu sẽ mất)?')) {
-    localStorage.removeItem(LS_KEY);
-    data = loadData(); populateSystems();
+  if (confirm('Reset về dữ liệu mặc định?')) {
+    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+    applyPermission();
+    populateSystems();
   }
 });
 
@@ -617,14 +586,25 @@ logoutBtn.addEventListener('click', () => {
   localStorage.removeItem(ADMIN_LS_KEY);
   applyPermission();
   alert('Đã thoát Admin');
-  // Re-render to remove any admin buttons that might have been rendered
   renderList();
 });
 
-/* ------------------ REFRESH UI ------------------ */
-function refreshUI(){ populateSystems(); applyPermission(); renderList(); populateContent(); }
-
-(function init(){ applyPermission(); refreshUI(); })();
+/* ------------------ INITIAL LOAD ------------------ */
+// Tải dữ liệu từ file data.json
+fetch('data.json')
+  .then(response => response.json())
+  .then(arr => {
+    data = arr;
+    applyPermission();
+    populateSystems();
+  })
+  .catch(error => {
+    console.error('Error loading data.json:', error);
+    // Nếu không tải được, dùng dữ liệu mặc định
+    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+    applyPermission();
+    populateSystems();
+  });
 </script>
 </body>
 </html>
