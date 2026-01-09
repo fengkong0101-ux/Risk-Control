@@ -339,43 +339,61 @@ function base64Encode(str) {
 }
 
 /* ------------------ Lưu dữ liệu lên GitHub ------------------ */
-function saveDataToGitHub() {
+async function saveDataToGitHub() {
   if (!isAdmin()) return;
-  if (!GITHUB_TOKEN) {
+  const token = localStorage.getItem('RISK_MANAGER_TOKEN') || '';
+  if (!token) {
     alert('GitHub token chưa được thiết lập.');
     return;
   }
+
   const content = JSON.stringify(data, null, 2);
-  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json`;
-  fetch(`${url}?ref=${GITHUB_BRANCH}`)
-    .then(response => response.json())
-    .then(file => {
-      const sha = file.sha;
-      // Prepare request body
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json?ref=${GITHUB_BRANCH}`;
+
+  async function fetchFileSha() {
+    const res = await fetch(url, { cache: 'no-store', headers: { 'Authorization': 'token ' + token }});
+    if (res.status === 404) return { exists: false, sha: null };
+    const j = await res.json();
+    return { exists: true, sha: j.sha };
+  }
+
+  const maxAttempts = 3;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const fileInfo = await fetchFileSha();
+
       const body = {
-        message: sha ? 'Update data via admin UI' : 'Create data via admin UI',
+        message: fileInfo.exists ? 'Update data via admin UI' : 'Create data via admin UI',
         branch: GITHUB_BRANCH,
-        content: base64Encode(content)
+        content: btoa(unescape(encodeURIComponent(content)))
       };
-      if (sha) body.sha = sha;
-      return fetch(url, {
+      if (fileInfo.exists && fileInfo.sha) body.sha = fileInfo.sha;
+
+      const putRes = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json`, {
         method: 'PUT',
-        headers: {
-          'Authorization': 'token ' + GITHUB_TOKEN,
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Authorization': 'token ' + token, 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
-    })
-    .then(res => res.json())
-    .then(res => {
-      if (res.content) {
+
+      const putJson = await putRes.json();
+
+      if (putRes.ok && putJson.content) {
         alert('Dữ liệu đã được lưu trên GitHub!');
+        return;
+      } else if (putRes.status === 409) {
+        if (attempt < maxAttempts) { await new Promise(r => setTimeout(r, 400 * attempt)); continue; }
+        alert('Lưu thất bại do xung đột. Vui lòng tải lại trang để lấy phiên bản mới.');
+        return;
       } else {
-        alert('Lưu thất bại: ' + JSON.stringify(res));
+        alert('Lưu thất bại: ' + JSON.stringify(putJson));
+        return;
       }
-    })
-    .catch(err => console.error('GitHub save error:', err));
+    } catch (err) {
+      console.error('Lỗi khi lưu lên GitHub:', err);
+      alert('Lỗi khi lưu lên GitHub: ' + (err.message || err));
+      return;
+    }
+  }
 }
 
 /* ------------------ DỮ LIỆU MẶC ĐỊNH ------------------ */
@@ -675,4 +693,5 @@ fetch('data.json')
 </script>
 </body>
 </html>
+
 
