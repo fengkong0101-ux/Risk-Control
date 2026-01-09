@@ -341,60 +341,44 @@ function base64Encode(str) {
 /* ------------------ Lưu dữ liệu lên GitHub ------------------ */
 async function saveDataToGitHub() {
   if (!isAdmin()) return;
-  const token = localStorage.getItem('RISK_MANAGER_TOKEN') || '';
-  if (!token) {
-    alert('GitHub token chưa được thiết lập.');
-    return;
-  }
 
   const content = JSON.stringify(data, null, 2);
-  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json?ref=${GITHUB_BRANCH}`;
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json`;
 
-  async function fetchFileSha() {
-    const res = await fetch(url, { cache: 'no-store', headers: { 'Authorization': 'token ' + token }});
-    if (res.status === 404) return { exists: false, sha: null };
-    const j = await res.json();
-    return { exists: true, sha: j.sha };
-  }
+  try {
+    // Lấy thông tin file hiện tại để có sha mới nhất
+    const fileRes = await fetch(`${url}?ref=${GITHUB_BRANCH}`);
+    const fileData = await fileRes.json();
+    const sha = fileData.sha;
 
-  const maxAttempts = 3;
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      const fileInfo = await fetchFileSha();
+    const body = {
+      message: sha ? 'Update data via admin UI' : 'Create data via admin UI',
+      branch: GITHUB_BRANCH,
+      content: base64Encode(content)
+    };
+    if (sha) body.sha = sha;
 
-      const body = {
-        message: fileInfo.exists ? 'Update data via admin UI' : 'Create data via admin UI',
-        branch: GITHUB_BRANCH,
-        content: btoa(unescape(encodeURIComponent(content)))
-      };
-      if (fileInfo.exists && fileInfo.sha) body.sha = fileInfo.sha;
+    const putRes = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token ' + GITHUB_TOKEN,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
 
-      const putRes = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json`, {
-        method: 'PUT',
-        headers: { 'Authorization': 'token ' + token, 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-
-      const putJson = await putRes.json();
-
-      if (putRes.ok && putJson.content) {
-        alert('Dữ liệu đã được lưu trên GitHub!');
-        return;
-      } else if (putRes.status === 409) {
-        if (attempt < maxAttempts) { await new Promise(r => setTimeout(r, 400 * attempt)); continue; }
-        alert('Lưu thất bại do xung đột. Vui lòng tải lại trang để lấy phiên bản mới.');
-        return;
-      } else {
-        alert('Lưu thất bại: ' + JSON.stringify(putJson));
-        return;
-      }
-    } catch (err) {
-      console.error('Lỗi khi lưu lên GitHub:', err);
-      alert('Lỗi khi lưu lên GitHub: ' + (err.message || err));
-      return;
+    const result = await putRes.json();
+    if (result.content) {
+      alert('Dữ liệu đã được lưu trên GitHub!');
+    } else {
+      alert('Lưu thất bại: ' + JSON.stringify(result));
     }
+  } catch (err) {
+    console.error('GitHub save error:', err);
+    alert('Lưu thất bại do lỗi mạng hoặc token');
   }
 }
+
 
 /* ------------------ DỮ LIỆU MẶC ĐỊNH ------------------ */
 const DEFAULT_DATA = [
@@ -693,5 +677,6 @@ fetch('data.json')
 </script>
 </body>
 </html>
+
 
 
