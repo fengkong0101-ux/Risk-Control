@@ -328,7 +328,7 @@ const ADMIN_LS_KEY = 'isAdmin_v1';
 
 /* ------------------ GitHub configuration ------------------ */
 // GitHub token lấy từ RISK_MANAGER_TOKEN (localStorage) để ẩn token
-const GITHUB_TOKEN = process.env.RISK_MANAGER_TOKEN;
+const GITHUB_TOKEN = localStorage.getItem('RISK_MANAGER_TOKEN');
 const GITHUB_OWNER  = 'fengkong0101-ux';
 const GITHUB_REPO   = 'Risk-Control';
 const GITHUB_BRANCH = 'main';
@@ -675,3 +675,4 @@ fetch('data.json')
 </script>
 </body>
 </html>
+
