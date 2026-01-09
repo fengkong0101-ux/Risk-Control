@@ -1,0 +1,194 @@
+[
+  {
+    "system": "RUMMY POINTS",
+    "group": "CƯỢC BẤT THƯỜNG",
+    "title": "RUMMY POINT - nạp đầu chơi 80% số tiền hoặc cá cược bất thường (đặt cược tiền nhỏ sau đó tăng tiền hoặc thắng cây thì chuyển trò chơi) - KHÓA TK",
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Rummy Point \n*会员风险评级 : 有问题\n*结论 : 黑名单"
+  },
+  {
+    "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
+    "group": "CHƠI MỨC CƯỢC QUÁ THẤP - KHẤU",
+    "title": "CHƠI DƯỚI 2 ĐỒNG NHIỀU LẦN - KHẤU (TRẢ NẠP)",
+    "content": "*会员ID : \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 有问题\n*时间 : 5\n*结论 :  扣除全部余额并退还押金"
+  },
+  {
+    "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
+    "group": "CHƠI MỨC CƯỢC QUÁ THẤP - KHÓA KHÓA TK",
+    "title": "CHƠI DƯỚI 2 ĐỒNG NHIỀU LẦN - KHÓA TÀI KHOẢN",
+    "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注"
+  },
+  {
+    "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
+    "group": "CHƠI MỨC CƯỢC QUÁ THẤP  - TỪ CHỐI",
+    "title": "CHƠI DƯỚI 2 ĐỒNG - TỪ CHỐI",
+    "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注"
+  },
+  {
+    "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
+    "group": "KHÓA THIẾT BỊ",
+    "title": "KHÓA THIẾT BỊ",
+    "content": "会员ID ： \n设备号： \n原因：会员同多设备账号  套利首充优惠 冻结 拉黑设备号  \n结论：拉黑设备号"
+  },
+  {
+    "system": "LẠM DỤNG NẠP ĐẦU",
+    "group": "CẤP DƯỚI,NHIỀU TÀI KHOẢN",
+    "title": "CẤP DƯỚI LẠM DỤNG NẠP ĐẦU - KHẤU VÀ KHÓA HOA HỒNG",
+    "content": "会员ID :\n*拒绝原因 : 下级正在滥用首存，并帮助上级领取团队奖励\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金"
+  },
+  {
+    "system": "LẠM DỤNG NẠP ĐẦU",
+    "group": "CẤP TRÊN  - DƯỚI,NHIỀU TÀI KHOẢN - KHÓA TK",
+    "title": "TẠO NHIỀU TK CẤP TRÊN - DƯỚI ĐỂ LẠM DỤNG",
+    "content": "*会员ID：\n*拒绝原因 : 会员多关联账号 充值相同 套利首充优惠 冻结拉黑\n*会员风险评级 :有问题\n*结论 :  冻结"
+  },
+  {
+    "system": "LẠM DỤNG NẠP ĐẦU",
+    "group": "CẤP TRÊN  - DƯỚI , NHIỀU TÀI KHOẢN - KHÓA TK",
+    "title": "TẠO NHIỀU TK CẤP TRÊN - DƯỚI ĐỂ LẠM DỤNG (2)",
+    "content": "*会员ID：\n*拒绝原因 :代理线路滥用首存奖励\n*会员风险评级 :有问题\n*结论 : 黑名单"
+  },
+  {
+    "system": "NẠP ĐẦU",
+    "group": "TRÙNG IP",
+    "title": "TRÙNG IP LẠM DỤNG NẠP ĐẦU",
+    "content": "*会员ID : \n*拒绝原因 :拥有相同 IP 地址和设备的自邀代理线路滥用首存红利，帮助第一位代理获得红利。\n*会员风险评级 : 有问题\n*结论 : 扣除奖金留本金"
+  },
+  {
+    "system": "NHẬN 1-5 ĐỒNG",
+    "group": "TRÙNG IP",
+    "title": "NHẬN 1-5đ TRÙNG IP (KHẤU TRỪ THƯỞNG)",
+    "content": "*会员ID  \n*拒绝原因：多个IP重复代理、兑换码奖励\n*自邀代理商没有资格领取奖金\n*会员风险评级：有问题\n*结论： 奖金扣除"
+  },
+  {
+    "system": "NHẬN 1-5 ĐỒNG",
+    "group": "NHẬN THƯỞNG KHÔNG NẠP",
+    "title": "NHẬN 1-5đ KHÔNG NẠP RÚT HƠN 110  (TỪ CHỐI BẮT NẠP)",
+    "content": "*会员ID  ：\n*拒绝原因 : 套利奖金\n*会员风险评级：中嫌疑\n*结论 : 要求成员充值"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "TRÙNG IP",
+    "title": "NHẬN 200-500 TRÙNG IP (KHẤU TRỪ THƯỞNG)",
+    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "NHẬN THƯỞNG KHÔNG NẠP",
+    "title": "NHẬN 200-500 KHÔNG NẠP (TỪ CHỐI  LẦN T3 TREO)",
+    "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "NHẬN THƯỞNG CÓ NẠP",
+    "title": "NHẬN 200-500 BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP (TỪ CHỐI  LẦN T3 TREO)",
+    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "TỈ LỆ THẤP",
+    "title": "NHẬN 200-500 VI PHẠM TỈ LỆ THẤP (KHẤU  TRỪ THƯỞNG)",
+    "content": "会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 200\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "CHƯA HOÀN THÀNH VÒNG CƯỢC",
+    "title": "NHẬN 200-500 CHƯA HOÀN THÀNH VÒNG CƯỢC (TỪ CHỐI CƯỢC LẠI)",
+    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "TỪ CHỐI NHIỀU LẦN KHÔNG NẠP",
+    "title": "NHẬN 200-500 TỪ CHỐI NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
+    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n*时间 : 5\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "NHẬN 200-500",
+    "group": "CHƠI SOHA (ALLIN)",
+    "title": "NHẬN 200-500 SOHA (KHẤU TRỪ THƯỞNG)",
+    "content": "*会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 500\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "NHẬN 7 ĐỒNG",
+    "group": "TRÙNG IP",
+    "title": "NHẬN 7đ TRÙNG IP (KHẤU TRỪ THƯỞNG)",
+    "content": "\"*会员ID ：\n*拒绝原因：多个IP重复代理、兑换码奖励\n*自邀代理商没有资格领取奖金\n*会员风险评级：有问题\n*结论： 奖金扣除 \""
+  },
+  {
+    "system": "NHẬN 7 ĐỒNG",
+    "group": "NHẬN THƯỞNG KHÔNG NẠP",
+    "title": "NHẬN 7Đ ĐÁ NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
+    "content": "*会员ID  ： \n*拒绝原因：恶意套利兑换码奖励\n*会员风险评级：有问题\n*结论： 奖金扣除"
+  },
+  {
+    "system": "CẤP DƯỚI NHẬN THƯỞNG",
+    "group": "CẤP DƯỚI NHIỀU TÀI KHOẢN",
+    "title": "CẤP DƯỚI LẠM DỤNG NẠP ĐẦU GIÚP CẤP TRÊN NHẬN THƯỞNG",
+    "content": "代理ID : \n下级ID :\n*拒绝原因 :   滥用首存资金的线路，对游戏没有任何价值。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励 ， 限制下级系统返佣和彩金 ，代理流水返拥"
+  },
+  {
+    "system": "RUMMY",
+    "group": "TRÙNG IP",
+    "title": "RUMMY TRÙNG IP",
+    "content": "会员ID :\n*拒绝原因 : 我本人没有充值，上级有多个IP地址，不符合RUMMY MATCH的提现条件。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "RUMMY",
+    "group": "TỈ LỆ THẤP",
+    "title": "RUMMY TỈ LỆ THẤP",
+    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 中嫌疑\n*结论 : 让会员继续下注"
+  },
+  {
+    "system": "RUMMY",
+    "group": "NHẬN THƯỞNG KHÔNG NẠP",
+    "title": "NHẬN THƯỞNG VÒNG QUAY RUMMY KHÔNG NẠP",
+    "content": "* 会员ID :\n*拒绝原因 : 我和上级都领取了奖励，但还未充值，未达到提现奖励的条件。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。"
+  },
+  {
+    "system": "RUMMY",
+    "group": "TỈ LỆ THẤP",
+    "title": "NHẬN THƯỞNG RUMMY VI PHẠM TỈ LỆ THẤP TỪ CHỐI NHIỀU LẦN",
+    "content": "*会员ID :\n*拒绝原因 : 以低投注比例领取 RUMMY 奖励 \n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "CƯỢC BẤT THƯỜNG",
+    "group": "CƯỢC TẤT TAY",
+    "title": "VI PHẠM TẤT TAY (TỪ CHỐI BẮT CƯỢC LẠI)",
+    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 中嫌疑\n*结论 : 让会员继续下注"
+  },
+  {
+    "system": "NHẬN THƯỞNG NHÓM",
+    "group": "TRÙNG IP - KHẤU",
+    "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU  TRỪ THƯỞNG)",
+    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "NHẬN THƯỞNG NHÓM",
+    "group": "TRÙNG IP - KHẤU 2",
+    "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU  TRỪ THƯỞNG) 2",
+    "content": "会员ID :\n*拒绝原因 : 成员的 IP 地址和设备与更低级别账号存在关联，彼此相互关联。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "NHẬN THƯỞNG NHÓM",
+    "group": "TRÙNG IP - KHẤU TRẢ NẠP",
+    "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU THƯỞNG TRẢ NẠP)",
+    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
+  },
+  {
+    "system": "NHẬN THƯỞNG NHÓM",
+    "group": "TRÙNG IP SOHA",
+    "title": "NHẬN THƯỞNG NHÓM TRÙNG IP SOHA",
+    "content": "*会员ID :\n*拒绝原因 : 搜哈\n*自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+  },
+  {
+    "system": "CƯỢC BẤT THƯỜNG",
+    "group": "TỈ LỆ THẤP - TỪ CHỐI",
+    "title": "VI PHẠM TỈ LỆ THẤP   (TỪ CHỐI BẮT CƯỢC LẠI)",
+    "content": "* 会员ID :\n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注"
+  },
+  {
+    "system": "CƯỢC BẤT THƯỜNG",
+    "group": "TỈ LỆ THẤP - KHẤU",
+    "title": "VI PHẠM TỈ LỆ THẤP TỪ CHỐI NHIỀU LẦN (KHẤU TRẢ NẠP)",
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 5\n*结论 :  扣除全部余额并退还押金"
+  }
+]
