@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quản lý Rủi ro — Risk Manager</title>
+  <!-- Google Font for modern look -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
   <style>
     :root {
       --maxw: 1100px;
-      --accent: #1363DF;
-      --accent-red: #e03131;
+      --accent: #e03131;      /* Primary accent (red) */
+      --accent-red: #a30000;  /* Darker red for danger/admin */
     }
     body {
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
       background: #f6f8fb;
       margin: 0;
       padding: 24px;
@@ -57,7 +59,7 @@
     select:focus, input:focus, textarea:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(19, 99, 223, 0.12);
+      box-shadow: 0 0 0 2px rgba(224, 49, 49, 0.12);
     }
     .content {
       background: #fcfeff;
@@ -87,12 +89,12 @@
     }
     button:active { transform: translateY(1px); }
     button:hover:not(.ghost) {
-      background: #0F52D0;
+      background: #a30000;
     }
     button.ghost {
       background: #fff;
       color: var(--accent);
-      border: 1px solid #d7e4ff;
+      border: 1px solid var(--accent);
     }
     button.ghost:hover {
       background: var(--accent);
@@ -139,7 +141,7 @@
       color: var(--accent-red);
       font-weight: 700;
     }
-    /* CSS mới cho form đăng nhập */
+    /* Modern login form tweaks */
     .login-form {
       display: flex;
       gap: 8px;
@@ -153,7 +155,7 @@
       .row { flex-direction: column; }
       .flex { width: 100%; justify-content: space-between; }
     }
-    /* Danh sách kết quả hiển thị như mục "Kết quả" */
+    /* List display */
     .list {
       margin-top: 16px;
       display: grid;
@@ -163,7 +165,7 @@
     .item {
       padding: 16px;
       border-radius: 10px;
-      background: #fcfeff; /* cùng nền như output */
+      background: #fcfeff;
       border: 1px solid #eef3fb;
       display: flex;
       flex-direction: column;
@@ -193,10 +195,10 @@
       font-size: 14px;
       line-height: 1.45;
     }
-    /* small visual tweaks */
+    /* Copy button styles */
     .btn-copy {
       background: transparent;
-      border: 1px dashed #d7e4ff;
+      border: 1px dashed var(--accent);
       color: var(--accent);
     }
     .btn-copy:hover {
@@ -291,7 +293,7 @@
   </div>
 
 <script>
-/* ------------------ DOM refs (explicit) ------------------ */
+/* ------------------ DOM refs ------------------ */
 const systemSelect = document.getElementById('systemSelect');
 const groupSelect = document.getElementById('groupSelect');
 const output = document.getElementById('output');
@@ -317,18 +319,63 @@ const loginForm = document.getElementById('loginForm');
 const adminPwdInput = document.getElementById('adminPwdInput');
 const loginConfirmBtn = document.getElementById('loginConfirmBtn');
 
-const copyOutputBtn = document.getElementById('copyOutputBtn');
-
 /* ------------------ CẤU HÌNH ADMIN ------------------ */
 const ADMIN_PASSWORD = 'admin'; // <-- đổi giá trị nếu cần
 const ADMIN_LS_KEY = 'isAdmin_v1';
 
+// GitHub configuration for saving data
+const GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN_HERE';     // <-- Thêm token của bạn tại đây
+const GITHUB_OWNER = 'YOUR_GITHUB_USERNAME';      // <-- Tên tài khoản GitHub
+const GITHUB_REPO  = 'YOUR_GITHUB_REPO';          // <-- Tên repository
+const GITHUB_BRANCH = 'main';                    // <-- Nhánh bạn muốn commit
+
+/* ------------------ HÀM MÃ HÓA BASE64 ------------------ */
+function base64Encode(str) {
+  return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+/* ------------------ Lưu dữ liệu lên GitHub ------------------ */
+function saveDataToGitHub() {
+  if (!isAdmin()) return;
+  const content = JSON.stringify(data, null, 2);
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json`;
+  fetch(`${url}?ref=${GITHUB_BRANCH}`)
+    .then(response => response.json())
+    .then(file => {
+      const sha = file.sha;
+      // Prepare request body
+      const body = {
+        message: sha ? 'Update data via admin UI' : 'Create data via admin UI',
+        branch: GITHUB_BRANCH,
+        content: base64Encode(content)
+      };
+      if (sha) body.sha = sha;
+      return fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Authorization': 'token ' + GITHUB_TOKEN,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (res.content) {
+        alert('Dữ liệu đã được lưu trên GitHub!');
+      } else {
+        alert('Lưu thất bại: ' + JSON.stringify(res));
+      }
+    })
+    .catch(err => console.error('GitHub save error:', err));
+}
+
 /* ------------------ DỮ LIỆU MẶC ĐỊNH ------------------ */
 const DEFAULT_DATA = [
-  { system: "RUMMY", group: "TRÙNG IP", title: "RUMMY TRÙNG IP", content: "会员ID : \n*拒绝原因 : 我本人没有充值，上级有多个IP地址，不符合RUMMY MATCH的提现条件。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励" },
-  { system: "RUMMY", group: "KHÔNG NẠP", title: "RUMMY KHÔNG NẠP", content: "会员ID : \n*拒绝原因 : 我和上级都领取了奖励，但还未充值，未达到提现奖励的条件。\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。" },
-  { system: "RUMMY", group: "TỈ LỆ THẤP", title: "RUMMY TỈ LỆ THẤP", content: "会员ID : \n*拒绝原因 : 以低投注比例领取 RUMMY 奖励\n*会员风险评级 : 有问题\n*结论 : 扣除奖励" },
-  { system: "CHƠI MỨC CƯỢC QUÁ THẤP", group: "TỈ LỆ THẤP", title: "CHƠI MỨC CƯỢC QUÁ THẤP - TỈ LỆ THẤP", content: "会员ID : \n*拒绝原因 : 故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 : 让会员继续下注" }
+  { system: "RUMMY", group: "TRÙNG IP", title: "RUMMY TRÙNG IP", content: "會員ID : \n*拒絕原因 : 我本人沒有充值，上級有多個IP地址，不符合RUMMY MATCH的提現條件。\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵" },
+  { system: "RUMMY", group: "KHÔNG NẠP", title: "RUMMY KHÔNG NẠP", content: "會員ID : \n*拒絕原因 : 我和上級都領取了獎勵，但還未充值，未達到提現獎勵的條件。\n*會員風險評級 : 中嫌疑\n*結論 : 要求會員充值。" },
+  { system: "RUMMY", group: "TỈ LỆ THẤP", title: "RUMMY TỈ LỆ THẤP", content: "會員ID : \n*拒絕原因 : 以低投注比例領取 RUMMY 獎勵\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵" },
+  { system: "CHƠI MỨC CƯỢC QUÁ THẤP", group: "TỈ LỆ THẤP", title: "CHƠI MỨC CƯỢC QUÁ THẤP - TỈ LỆ THẤP", content: "會員ID : \n*拒絕原因 : 故意下注小額，達到流水直接提現 刷首充獎勵\n*會員風險評級 : 中嫌疑\n*結論 : 讓會員繼續下注" }
 ];
 
 /* ------------------ DATA HIỆN TẠI ------------------ */
@@ -355,10 +402,14 @@ function applyPermission() {
 }
 
 /* ------------------ CHỨC NĂNG HIỂN THỊ ------------------ */
-function getUniqueSystems(){ return [...new Set(data.map(d=>d.system))].sort(); }
-function getGroupsFor(system){ return [...new Set(data.filter(d=>d.system===system).map(d=>d.group))].sort(); }
+function getUniqueSystems() {
+  return [...new Set(data.map(d => d.system))].sort();
+}
+function getGroupsFor(system) {
+  return [...new Set(data.filter(d => d.system === system).map(d => d.group))].sort();
+}
 
-function populateSystems(){
+function populateSystems() {
   const selected = systemSelect.value;
   systemSelect.innerHTML = '';
   getUniqueSystems().forEach(s => {
@@ -366,13 +417,13 @@ function populateSystems(){
     o.value = s; o.textContent = s;
     systemSelect.appendChild(o);
   });
-  if (selected && [...systemSelect.options].some(o=>o.value===selected)) {
+  if (selected && [...systemSelect.options].some(o => o.value === selected)) {
     systemSelect.value = selected;
   }
   populateGroups();
 }
 
-function populateGroups(){
+function populateGroups() {
   const sys = systemSelect.value;
   groupSelect.innerHTML = '';
   const allOpt = document.createElement('option');
@@ -391,7 +442,7 @@ function populateGroups(){
   renderList();
 }
 
-function populateContent(){
+function populateContent() {
   const sys = systemSelect.value;
   const grp = groupSelect.value;
   if (!sys) {
@@ -399,8 +450,8 @@ function populateContent(){
     return;
   }
   let items = [];
-  if (!grp) items = data.filter(d=>d.system===sys);
-  else items = data.filter(d=>d.system===sys && d.group===grp);
+  if (!grp) items = data.filter(d => d.system === sys);
+  else items = data.filter(d => d.system === sys && d.group === grp);
   if (items.length) {
     output.textContent = items.map(i => `Tiêu đề: ${i.title}\n${i.content}`).join('\n\n');
   } else {
@@ -409,12 +460,12 @@ function populateContent(){
 }
 
 /* ------------------ HIỂN THỊ DANH SÁCH ------------------ */
-function renderList(){
+function renderList() {
   listArea.innerHTML = '';
-  const q = (searchBox.value||'').trim().toLowerCase();
+  const q = (searchBox.value || '').trim().toLowerCase();
   data.forEach((d, idx) => {
     if (q) {
-      const hay = (d.title+' '+d.content+' '+d.system+' '+d.group).toLowerCase();
+      const hay = (d.title + ' ' + d.content + ' ' + d.system + ' ' + d.group).toLowerCase();
       if (!hay.includes(q)) return;
     }
     const item = document.createElement('div'); item.className = 'item';
@@ -430,8 +481,8 @@ function renderList(){
     btnCopy.textContent = 'Sao chép';
     btnCopy.onclick = () => {
       navigator.clipboard.writeText(d.content)
-        .then(()=> alert('Nội dung đã được sao chép!'))
-        .catch(()=> alert('Sao chép thất bại'));
+        .then(() => alert('Nội dung đã được sao chép!'))
+        .catch(() => alert('Sao chép thất bại'));
     };
     actions.appendChild(btnCopy);
 
@@ -450,6 +501,7 @@ function renderList(){
         if (confirm('Xác nhận xóa mục này?')) {
           data.splice(idx, 1);
           populateSystems();
+          saveDataToGitHub(); // Lưu dữ liệu sau khi xóa
         }
       };
       actions.appendChild(btnDel);
@@ -471,7 +523,7 @@ addButton.addEventListener('click', () => {
     alert('Vui lòng nhập đầy đủ Hệ, Nhóm lỗi, Tiêu đề và Nội dung');
     return;
   }
-  data.push({system: sys, group: grp, title: title, content: cont});
+  data.push({ system: sys, group: grp, title: title, content: cont });
   clearInputs();
   populateSystems();
   // Sau khi thêm, chọn hệ và nhóm mới
@@ -480,9 +532,10 @@ addButton.addEventListener('click', () => {
   groupSelect.value = grp;
   populateContent();
   renderList();
+  saveDataToGitHub(); // Lưu dữ liệu sau khi thêm
 });
 
-function startEdit(idx){
+function startEdit(idx) {
   if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để sửa'); return; }
   editIndex = idx;
   const d = data[idx];
@@ -504,16 +557,22 @@ updateButton.addEventListener('click', () => {
     alert('Vui lòng nhập đầy đủ Hệ, Nhóm lỗi, Tiêu đề và Nội dung');
     return;
   }
-  data[editIndex] = {system: sys, group: grp, title: title, content: cont};
+  data[editIndex] = { system: sys, group: grp, title: title, content: cont };
   editIndex = -1;
   clearInputs();
   addButton.style.display = 'inline-block';
   updateButton.style.display = 'none';
   populateSystems();
+  saveDataToGitHub(); // Lưu dữ liệu sau khi cập nhật
 });
 
 clearForm.addEventListener('click', () => { clearInputs(); });
-function clearInputs() { newSystem.value=''; newGroup.value=''; newTitle.value=''; newContent.value=''; }
+function clearInputs() {
+  newSystem.value = '';
+  newGroup.value = '';
+  newTitle.value = '';
+  newContent.value = '';
+}
 
 /* ------------------ Export / Import ------------------ */
 exportBtn.addEventListener('click', () => {
@@ -524,7 +583,7 @@ exportBtn.addEventListener('click', () => {
 });
 
 importFile.addEventListener('change', (e) => {
-  if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để import'); importFile.value=''; return; }
+  if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để import'); importFile.value = ''; return; }
   const f = e.target.files[0]; if (!f) return;
   const reader = new FileReader();
   reader.onload = () => {
@@ -535,7 +594,7 @@ importFile.addEventListener('change', (e) => {
         data = arr; populateSystems(); alert('Nhập file thành công');
       }
     } catch(err) {
-      alert('Lỗi khi đọc file: '+err.message);
+      alert('Lỗi khi đọc file: ' + err.message);
     }
   };
   reader.readAsText(f);
@@ -556,11 +615,12 @@ systemSelect.addEventListener('change', () => { populateGroups(); });
 groupSelect.addEventListener('change', () => { populateContent(); renderList(); });
 
 /* ------------------ COPY KẾT QUẢ ------------------ */
+const copyOutputBtn = document.getElementById('copyOutputBtn');
 copyOutputBtn.addEventListener('click', () => {
   const text = output.textContent;
   navigator.clipboard.writeText(text)
-    .then(()=> alert('Nội dung kết quả đã được sao chép!'))
-    .catch(()=> alert('Sao chép thất bại'));
+    .then(() => alert('Nội dung kết quả đã được sao chép!'))
+    .catch(() => alert('Sao chép thất bại'));
 });
 
 /* ------------------ ADMIN LOGIN ------------------ */
@@ -572,7 +632,7 @@ loginBtn.addEventListener('click', () => {
 
 loginConfirmBtn.addEventListener('click', () => {
   const pwd = adminPwdInput.value;
-  if (pwd === ADMIN_PASSWORD){
+  if (pwd === ADMIN_PASSWORD) {
     localStorage.setItem(ADMIN_LS_KEY, '1');
     applyPermission();
     alert('Đăng nhập Admin thành công');
