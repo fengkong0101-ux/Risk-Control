@@ -193,12 +193,6 @@
   },
   {
     "system": "1",
-    "group": "1",
-    "title": "2",
-    "content": "3"
-  },
-  {
-    "system": "1",
     "group": "3",
     "title": "2",
     "content": "3"
@@ -214,11 +208,5 @@
     "group": "333333",
     "title": "3222222",
     "content": "23333332222"
-  },
-  {
-    "system": "ádas",
-    "group": "dsadas",
-    "title": "đasadsa",
-    "content": "1111"
   }
 ]
