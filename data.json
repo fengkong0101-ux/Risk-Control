@@ -8,19 +8,19 @@
   {
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
     "group": "CHƠI MỨC CƯỢC QUÁ THẤP - KHẤU",
-    "title": "CHƠI DƯỚI 2 ĐỒNG NHIỀU LẦN - KHẤU (TRẢ NẠP)",
+    "title": "CHƠI DƯỚI 2 ĐỒNG (5 ĐỒNG) NHIỀU LẦN - KHẤU (TRẢ NẠP)",
     "content": "*会员ID : \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 有问题\n*时间 : 5\n*结论 :  扣除全部余额并退还押金"
   },
   {
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
     "group": "CHƠI MỨC CƯỢC QUÁ THẤP - KHÓA KHÓA TK",
-    "title": "CHƠI DƯỚI 2 ĐỒNG NHIỀU LẦN - KHÓA TÀI KHOẢN",
+    "title": "CHƠI DƯỚI 2 ĐỒNG (5 ĐỒNG) NHIỀU LẦN - KHÓA TÀI KHOẢN",
     "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  黑名单"
   },
   {
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
     "group": "CHƠI MỨC CƯỢC QUÁ THẤP  - TỪ CHỐI",
-    "title": "CHƠI DƯỚI 2 ĐỒNG - TỪ CHỐI",
+    "title": "CHƠI DƯỚI 2 ĐỒNG (5 ĐỒNG) - TỪ CHỐI",
     "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注"
   },
   {
@@ -208,5 +208,17 @@
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI (2)",
   "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI (2)",
   "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注"
-  }
+  },
+  {
+  "system": "KHÔNG ĐỦ VÒNG CƯỢC",
+  "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TOÀN BỘ",
+  "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU",
+  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：中度怀疑\n*时间 : 5\n*结论：扣除奖励"
+},
+{
+  "system": "KHÔNG ĐỦ VÒNG CƯỢC",
+  "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
+  "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
+  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：中度怀疑\n*时间 : 5\n*结论：扣除全部余额并退还押金"
+}
 ]
