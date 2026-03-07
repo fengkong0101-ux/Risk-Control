@@ -225,6 +225,18 @@
   "system": "LẠM DỤNG THƯỞNG",
   "group": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG)",
   "title": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG) - KHẤU TRỪ THƯỞNG",
-  "content": "*会员ID : 3202743\n*拒绝原因 : 故意下注小额以快速完成流水要求并立即提现，从而套取平台奖励。\n*会员风险评级 : 中嫌疑\n*结论 : 扣除奖励"
+  "content": "*会员ID : \n*拒绝原因 : 故意下注小额以快速完成流水要求并立即提现，从而套取平台奖励。\n*会员风险评级 : 中嫌疑\n*结论 : 扣除奖励"
+},
+  {
+  "system": "NHẬN THƯỞNG NHÓM",
+  "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
+  "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - TỪ CHỐI",
+  "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。"
+},
+{
+  "system": "NHẬN THƯỞNG NHÓM",
+  "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
+  "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - KHẤU THƯỞNG",
+  "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间 : 5\n*结论 : 扣除奖励"
 }
 ]
