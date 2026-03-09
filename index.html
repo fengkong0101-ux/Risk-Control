@@ -222,8 +222,8 @@
   <div class="wrap">
     <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
       <div>
-        <h1>Quản lý Rủi ro (Risk Manager) <span>@Ren</span></h1>
-        <p class="lead">Chọn Hệ → Nhóm lỗi (chỉ hiển thị các lỗi trong Hệ đó). Thêm / Sửa / Xóa / Xuất / Nhập dữ liệu</p>
+        <h1>Quản lý Rủi ro (Risk Manager) <span>- @Ren</span></h1>
+        <p class="lead">Chọn Nhóm Lỗi → Hướng Xử Lý (chỉ hiển thị các lỗi trong Nhóm Lỗi đó). Hãy liên hệ lại với cấp trên nếu có bất kì thắc mắc nào</p>
       </div>
       <div style="text-align: right;">
         <div style="margin-bottom: 8px;">
@@ -241,11 +241,11 @@
 
     <div class="row" style="margin-top: 8px;">
       <div style="flex: 1; min-width: 220px;">
-        <label class="muted">Chọn Hệ</label>
+        <label class="muted">Chọn Nhóm Lỗi</label>
         <select id="systemSelect"></select>
       </div>
       <div style="flex: 1; min-width: 220px;">
-        <label class="muted">Chọn Nhóm lỗi</label>
+        <label class="muted">Cách Xử Lý</label>
         <select id="groupSelect"></select>
       </div>
       <div style="min-width: 160px;">
@@ -263,13 +263,13 @@
               <button id="copyOutputBtn" class="small ghost">Sao chép</button>
             </div>
           </div>
-          <div id="output" class="content">Chọn Hệ và Nhóm lỗi để xem nội dung</div>
+          <div id="output" class="content">Chọn Nhóm Lỗi và Cách Xử Lý để xem nội dung</div>
         </div>
         <div style="width: 320px;">
           <div class="muted">Thêm / Sửa mục</div>
-          <input id="newSystem" placeholder="Hệ (vd: RUMMY)" />
+          <input id="newSystem" placeholder="Nhóm Lỗi (vd: Nhận 500)" />
           <input id="newGroup" placeholder="Nhóm lỗi (vd: TRÙNG IP)" />
-          <input id="newTitle" placeholder="Tiêu đề (vd: RUMMY TRÙNG IP)" />
+          <input id="newTitle" placeholder="Tiêu đề (vd: NHẬN 500 TRÙNG IP)" />
           <textarea id="newContent" rows="6" placeholder="Nội dung chi tiết..."></textarea>
           <div class="controls" style="margin-top: 8px;">
             <button id="addButton" class="small admin-only">ADD</button>
@@ -677,6 +677,5 @@ fetch('data.json')
 </script>
 </body>
 </html>
-
 
 
