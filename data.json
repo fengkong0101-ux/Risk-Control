@@ -9,7 +9,7 @@
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
     "group": "CHƠI MỨC CƯỢC QUÁ THẤP - KHẤU",
     "title": "CHƠI DƯỚI 2 ĐỒNG (5 ĐỒNG) NHIỀU LẦN - KHẤU (TRẢ NẠP)",
-    "content": "*会员ID : \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 大嫌疑\n*时间 : 5\n*结论 :  扣除全部余额并退还押金"
+    "content": "*会员ID : \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 大嫌疑\n*时间 : 3\n*结论 :  扣除全部余额并退还押金 "
   },
   {
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
@@ -21,7 +21,7 @@
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
     "group": "CHƠI MỨC CƯỢC QUÁ THẤP  - TỪ CHỐI",
     "title": "CHƠI DƯỚI 2 ĐỒNG (5 ĐỒNG) - TỪ CHỐI",
-    "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注"
+    "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注\n*Ghi chú: WD ABNORMAL SMALL BET [NGÀY]"
   },
   {
     "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
@@ -99,7 +99,7 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỪ CHỐI NHIỀU LẦN KHÔNG NẠP",
     "title": "NHẬN 500 VÒNG QUAY TỪ CHỐI NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
-    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n*时间 : 5\n*结论 : 扣除奖励"
+    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n*时间 : 3\n*结论 : 扣除奖励"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -189,7 +189,7 @@
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP - KHẤU",
     "title": "VI PHẠM TỈ LỆ THẤP TỪ CHỐI NHIỀU LẦN (KHẤU TRẢ NẠP)",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 5\n*结论 :  扣除全部余额并退还押金"
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 3\n*结论 :  扣除全部余额并退还押金"
   },
   {
     "system": "NHẬN 1-5 ĐỒNG",
@@ -213,13 +213,13 @@
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TOÀN BỘ",
   "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU",
-  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 5\n*结论：扣除奖励"
+  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除奖励"
 },
 {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
   "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
-  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 5\n*结论：扣除全部余额并退还押金"
+  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除全部余额并退还押金"
 },
 {
   "system": "LẠM DỤNG THƯỞNG",
@@ -237,7 +237,7 @@
   "system": "NHẬN THƯỞNG NHÓM",
   "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
   "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - KHẤU THƯỞNG",
-  "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间 : 5\n*结论 : 扣除奖励"
+  "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间 : 3\n*结论 : 扣除奖励"
 },
 {
   "system": "CƯỢC BẤT THƯỜNG",
