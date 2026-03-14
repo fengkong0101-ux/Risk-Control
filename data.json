@@ -232,5 +232,11 @@
   "group": "CƯỢC TẤT TAY",
   "title": "CƯỢC TẤT TAY - KHẤU TRẢ NẠP",
   "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+},
+{
+  "system": "CƯỢC BẤT THƯỜNG",
+  "group": "CƯỢC ĐỐI LẬP",
+  "title": "CƯỢC ĐỐI LẬP - ĐÓNG BĂNG TÀI KHOẢN",
+  "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL HEAD TO HEAD BETTING [NGÀY]"
 }
 ]
