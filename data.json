@@ -189,13 +189,13 @@
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
   "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
-  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注\n*  WD ABNORMALINCOMPLETE TURNOVER [NGÀY]"
+  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI (2)",
   "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI (2)",
-  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注\n*  WD ABNORMALINCOMPLETE TURNOVER [NGÀY]"
+  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
