@@ -1,7 +1,7 @@
 [
   {
-    "system": "RUMMY POINTS",
-    "group": "CƯỢC BẤT THƯỜNG",
+    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
+    "group": "CƯỢC BẤT THƯỜNG - RUMMY POINT",
     "title": "RUMMY POINT - nạp đầu chơi 80% số tiền hoặc cá cược bất thường (đặt cược tiền nhỏ sau đó tăng tiền hoặc thắng cây thì chuyển trò chơi) - KHÓA TK",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Rummy Point \n*会员风险评级 : 有问题\n*结论 : 黑名单"
   },
@@ -238,5 +238,18 @@
   "group": "CƯỢC ĐỐI LẬP",
   "title": "CƯỢC ĐỐI LẬP - ĐÓNG BĂNG TÀI KHOẢN",
   "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL HEAD TO HEAD BETTING [NGÀY]"
-}
+},  
+{
+    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
+    "group": "CƯỢC BẤT THƯỜNG - LUCKY 777",
+    "title": "CƯỢC BẤT THƯỜNG LUCKY 777 - KHÓA TK",
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 LUCKY 777 \n*会员风险评级 : 有问题\n*结论 : 黑名单"
+  },  
+{
+    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
+    "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
+    "title": "CƯỢC BẤT THƯỜNG TEEN PATTI (ĐANG CƯỢC CÁC ĐƠN NHỎ CÓ 1 VÀI ĐƠN TO TIỀN BẤT THƯỜNG - KHÓA TK",
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单"
+  }
+
 ]
