@@ -21,7 +21,7 @@
     "system": "CHƠI MỨC CƯỢC QUÁ THẤP",
     "group": "CHƠI MỨC CƯỢC QUÁ THẤP  - TỪ CHỐI",
     "title": "CHƠI DƯỚI 2 ĐỒNG (5 ĐỒNG) - TỪ CHỐI",
-    "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注\n*  WD ABNORMAL SMALL BET [NGÀY]"
+    "content": "会员ID :   \n*拒绝原因 :故意下注小额，达到流水直接提现 刷首充奖励\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注，流水 ×3\n*  WD ABNORMAL SMALL BET [NGÀY]"
   },
   {
     "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
@@ -87,7 +87,7 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "CHƯA HOÀN THÀNH VÒNG CƯỢC",
     "title": "NHẬN 500 VÒNG QUAY CHƯA HOÀN THÀNH VÒNG CƯỢC (TỪ CHỐI CƯỢC LẠI)",
-    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注"
+    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -187,15 +187,15 @@
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-  "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
-  "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
-  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+  "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
+  "title": "NHẬN KHUYẾN MÃI CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
+  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-  "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI (2)",
-  "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI (2)",
-  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+  "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
+  "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
+  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
