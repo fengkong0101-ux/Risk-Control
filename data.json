@@ -159,7 +159,7 @@
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "VI PHẠM TỈ LỆ THẤP (NHẸ - Nếu thành viên có đặt cược tỷ lệ thấp, nhưng không phải toàn bộ cược đều là tỷ lệ thấp, và không thuộc hành vi rõ ràng) - TỪ CHỐI BẮT CƯỢC LẠI",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  警告\n*  WD ABNORMAL LOW ODD [NGÀY]"
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注\n*  WD ABNORMAL LOW ODD [NGÀY]"
   },
 
   {
