@@ -129,25 +129,7 @@
     "system": "RUMMY",
     "group": "TỈ LỆ THẤP",
     "title": "RUMMY TỈ LỆ THẤP",
-    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 中嫌疑\n*结论 : 让会员继续下注"
-  },
-  {
-    "system": "RUMMY",
-    "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN THƯỞNG VÒNG QUAY RUMMY KHÔNG NẠP",
-    "content": "* 会员ID :\n*拒绝原因 : 我和上级都领取了奖励，但还未充值，未达到提现奖励的条件。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。"
-  },
-  {
-    "system": "RUMMY",
-    "group": "TỈ LỆ THẤP",
-    "title": "NHẬN THƯỞNG RUMMY VI PHẠM TỈ LỆ THẤP TỪ CHỐI NHIỀU LẦN",
-    "content": "*会员ID :\n*拒绝原因 : 以低投注比例领取 RUMMY 奖励 \n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
-  },
-  {
-    "system": "CƯỢC BẤT THƯỜNG",
-    "group": "CƯỢC TẤT TAY",
-    "title": "VI PHẠM TẤT TAY - KHÓA TÀI KHOẢN",
-    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL ALL-IN [NGÀY]"
+    "content": "*会员ID :\n*拒绝原因 : 下注低赔率  \n*会员风险评级 : 中嫌疑\n*结论 : 让会员继续下注"
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
@@ -233,13 +215,25 @@
   "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
   "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - KHẤU THƯỞNG",
   "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间 : 3\n*结论 : 扣除奖励"
+},  
+{
+  "system": "CƯỢC BẤT THƯỜNG",
+  "group": "CƯỢC TẤT TAY",
+  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI BẮT CƯỢC LẠI",
+  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中嫌疑\n*结论 : 警告\n*  WD ABNORMAL ALL-IN [NGÀY]"
 },
 {
   "system": "CƯỢC BẤT THƯỜNG",
   "group": "CƯỢC TẤT TAY",
-  "title": "CƯỢC TẤT TAY - KHẤU TRẢ NẠP",
+  "title": "VI PHẠM CƯỢC TẤT TAY - KHẤU TRẢ NẠP",
   "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n*  WD ABNORMAL ALL-IN [NGÀY]"
 },
+{
+    "system": "CƯỢC BẤT THƯỜNG",
+    "group": "CƯỢC TẤT TAY",
+    "title": "VI PHẠM CƯỢC TẤT TAY - KHÓA TÀI KHOẢN",
+    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL ALL-IN [NGÀY]"
+  },
 {
   "system": "CƯỢC BẤT THƯỜNG",
   "group": "CƯỢC ĐỐI LẬP",
