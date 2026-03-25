@@ -159,7 +159,7 @@
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "VI PHẠM TỈ LỆ THẤP (NHẸ - Nếu thành viên có đặt cược tỷ lệ thấp, nhưng không phải toàn bộ cược đều là tỷ lệ thấp, và không thuộc hành vi rõ ràng) - TỪ CHỐI BẮT CƯỢC LẠI",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  让会员继续下注\n*  WD ABNORMAL LOW ODD [NGÀY]"
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  警告\n*  WD ABNORMAL LOW ODD [NGÀY]"
   },
 
   {
@@ -251,6 +251,12 @@
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI (ĐANG CƯỢC CÁC ĐƠN NHỎ CÓ 1 VÀI ĐƠN TO TIỀN BẤT THƯỜNG - KHÓA TK",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单"
+  },
+{
+    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
+    "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
+    "title": "CƯỢC BẤT THƯỜNG  7 UP 7 DOWN (Cược dàn điểm, đối ứng, mục tiêu chính là chờ "nổ" nhân lớn (x50, x100, x500) rơi trúng vào một trong các ô đã đặt) - Cảnh cáo bắt cược lại.",
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中嫌疑\n*结论 : 警告"
   }
 
 ]
