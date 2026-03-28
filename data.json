@@ -48,15 +48,15 @@
     "content": "*会员ID：\n*拒绝原因 :代理线路滥用首存奖励\n*会员风险评级 :有问题\n*结论 : 黑名单"
   },
   {
-    "system": "NHẬN 1-5 ĐỒNG",
+    "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "TRÙNG IP",
-    "title": "NHẬN 1-5đ TRÙNG IP (KHẤU TRỪ THƯỞNG)",
+    "title": "NHẬN 1-5-7đ  (thưởng chia sẻ, tin nhắn, video) TRÙNG IP (KHẤU TRỪ THƯỞNG)",
     "content": "*会员ID  \n*拒绝原因：多个IP重复代理、兑换码奖励\n*自邀代理商没有资格领取奖金\n*会员风险评级：有问题\n*结论： 奖金扣除"
   },
   {
-    "system": "NHẬN 1-5 ĐỒNG",
+    "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN 1-5đ KHÔNG NẠP RÚT HƠN 110  (TỪ CHỐI BẮT NẠP)",
+    "title": "NHẬN 1-5-7đ  (thưởng chia sẻ, tin nhắn, video) KHÔNG NẠP RÚT HƠN 110  (TỪ CHỐI BẮT NẠP)",
     "content": "*会员ID  ：\n*拒绝原因 : 套利奖金\n*会员风险评级：中嫌疑\n*结论 : 要求成员充值"
   },
   {
@@ -108,9 +108,9 @@
     "content": "\"*会员ID ：\n*拒绝原因：多个IP重复代理、兑换码奖励\n*自邀代理商没有资格领取奖金\n*会员风险评级：有问题\n*结论： 奖金扣除 \""
   },
   {
-    "system": "NHẬN 7 ĐỒNG",
+    "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN 7Đ ĐÁ NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
+    "title": "NHẬN 1-5-7đ  (thưởng chia sẻ, tin nhắn, video) ĐÁ NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
     "content": "*会员ID  ： \n*拒绝原因：恶意套利兑换码奖励\n*会员风险评级：有问题\n*结论： 奖金扣除"
   },
   {
@@ -169,9 +169,9 @@
     "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 3\n*结论 :  扣除全部余额并退还押金\n*  WD ABNORMAL LOW ODD [NGÀY]"
   },
   {
-    "system": "NHẬN 1-5 ĐỒNG",
+    "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "ĐẶT CƯỢC SỐ TIỀN NHỎ",
-    "title": "NHẬN  1-5 ĐỒNG ĐẶT CƯỢC SỐ TIỀN NHỎ - KHẤU",
+    "title": "NHẬN  1-5-7 ĐỒNG ĐẶT CƯỢC SỐ TIỀN NHỎ - KHẤU",
     "content": "*会员ID :   \n*拒绝原因 : 领取游戏促销奖金，通过小额投注完成流水后提现。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
   },
   {
