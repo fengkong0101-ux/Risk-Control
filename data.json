@@ -69,13 +69,13 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
     "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP (TỪ CHỐI  LẦN T3 TREO)",
-    "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
+    "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*SỐ LẦN : 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG CÓ NẠP",
     "title": "NHẬN 500 VÒNG QUAY BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP (TỪ CHỐI  LẦN T3 TREO)",
-    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
+    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*SỐ LẦN : 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -93,7 +93,7 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỪ CHỐI NHIỀU LẦN KHÔNG NẠP",
     "title": "NHẬN 500 VÒNG QUAY TỪ CHỐI NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
-    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n*时间 : 3\n*结论 : 扣除奖励"
+    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n*SỐ LẦN : 3\n*结论 : 扣除奖励"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -122,13 +122,13 @@
   {
     "system": "RUMMY",
     "group": "ĐẶT CƯỢC BẤT THƯỜNG",
-    "title": "RUMMY TỈ LỆ THẤP - TỪ CHỐI CẢNH CÁO",
+    "title": "RUMMY CƯỢC BẤT THƯỜNG (Thời gian bắt đầu và kết thúc ván nhanh (dưới 15s) từ 4-5 đơn liên tục hoặc cược quá ít vòng) - TỪ CHỐI CẢNH CÁO",
     "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 中嫌疑\n*结论 :  警告"
   },
   {
     "system": "RUMMY",
     "group": "ĐẶT CƯỢC BẤT THƯỜNG",
-    "title": "RUMMY TỈ LỆ THẤP - TỪ CHỐI X3 VÒNG CƯỢC",
+    "title": "RUMMY CƯỢC BẤT THƯỜNG (Thời gian bắt đầu và kết thúc ván nhanh (dưới 15s) từ 4-5 đơn liên tục hoặc cược quá ít vòng) - TỪ CHỐI X3 VÒNG CƯỢC",
     "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 有问题\n*结论 : 让会员继续下注,流水 ×3"
   },
   {
@@ -219,7 +219,7 @@
   "system": "NHẬN THƯỞNG NHÓM",
   "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
   "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - KHẤU THƯỞNG",
-  "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*SỐ LẦN : 3\n*结论 : 扣除奖励"
+  "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*SỐ LẦN: 3\n*结论 : 扣除奖励"
 },  
 {
   "system": "CƯỢC BẤT THƯỜNG",
