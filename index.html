@@ -1,681 +1,829 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quản lý Rủi ro — Risk Manager</title>
-  <!-- Google Font for modern look -->
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --maxw: 1100px;
-      --accent: #e03131;      /* Primary accent (red) */
-      --accent-red: #a30000;  /* Darker red for danger/admin */
+      --bg: #f4f6f8;
+      --bg-soft: #ffffff;
+      --panel: rgba(255, 255, 255, 0.92);
+      --panel-2: rgba(255, 247, 237, 0.98);
+      --text: #17202a;
+      --muted: #667085;
+      --border: #e5d7c6;
+      --border-2: #d8c2a8;
+      --accent: #b45309;
+      --accent-2: #9a3412;
+      --accent-soft: rgba(245, 158, 11, 0.09);
+      --card-bg: #fff7ed;
+      --block-bg: #ffedd5;
+      --shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
+      --shadow-strong: 0 14px 36px rgba(16, 24, 40, 0.12);
+      --maxw: 1140px;
     }
+
+    [data-theme="dark"] {
+      --bg: #111318;
+      --bg-soft: #171b22;
+      --panel: rgba(20, 24, 31, 0.92);
+      --panel-2: rgba(27, 31, 39, 0.98);
+      --text: #e8ecf2;
+      --muted: #aab2bf;
+      --border: #2a3340;
+      --border-2: #384354;
+      --accent: #f59e0b;
+      --accent-2: #f97316;
+      --accent-soft: rgba(245, 158, 11, 0.11);
+      --card-bg: #1b2028;
+      --block-bg: #202734;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.30);
+      --shadow-strong: 0 14px 36px rgba(0, 0, 0, 0.40);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+
     body {
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-      background: #f6f8fb;
       margin: 0;
       padding: 24px;
       display: flex;
       justify-content: center;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, var(--accent-soft), transparent 32%),
+        linear-gradient(180deg, var(--bg), var(--bg));
+      transition: background 0.25s ease, color 0.25s ease;
+      overflow-x: hidden;
     }
+
     .wrap {
-      max-width: var(--maxw);
+      position: relative;
       width: 100%;
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(18, 38, 63, 0.06);
+      max-width: var(--maxw);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      animation: fadeUp 0.4s ease both;
     }
+
+    .wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent, rgba(245, 158, 11, 0.14), transparent 70%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
     h1 {
       margin: 0 0 8px;
-      font-size: 26px;
-      background: linear-gradient(90deg, var(--accent), #ff6b6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: clamp(26px, 3vw, 34px);
+      letter-spacing: -0.2px;
+      color: var(--accent);
+      transition: color 0.25s ease;
     }
-    p.lead {
-      margin: 0 0 14px;
-      color: #445;
-      opacity: 0.85;
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 860px;
     }
-    .row {
+
+    .controls-top {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .theme-toggle,
+    .copy-all-btn {
+      border: 1px solid var(--border-2);
+      background: var(--panel-2);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .theme-toggle:hover,
+    .copy-all-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .filters {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-top: 10px;
+      align-items: end;
     }
-    select, input, textarea, button {
-      font-size: 14px;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #d4d9de;
-    }
-    select, input {
-      height: 36px;
-    }
-    textarea {
-      resize: vertical;
-    }
-    select:focus, input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(224, 49, 49, 0.12);
-    }
-    .content {
-      background: #fcfeff;
-      padding: 12px;
-      border: 1px solid #eef3fb;
-      border-radius: 8px;
-      min-height: 120px;
-      white-space: pre-line;
-    }
-    .panel {
-      padding: 12px;
-      border-radius: 12px;
-      background: #fbfdff;
-      border: 1px solid #eef3fb;
-    }
-    .controls {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    button {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background 0.18s, transform 0.06s;
-    }
-    button:active { transform: translateY(1px); }
-    button:hover:not(.ghost) {
-      background: #a30000;
-    }
-    button.ghost {
-      background: #fff;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-    }
-    button.ghost:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-    .small {
-      padding: 6px 8px;
-      font-size: 13px;
-    }
-    .search {
+
+    .field {
       flex: 1;
       min-width: 220px;
     }
-    .file-input {
-      display: inline-block;
-    }
-    .danger {
-      background: var(--accent-red);
-    }
-    button.danger:hover {
-      filter: brightness(0.92);
-    }
-    .muted {
-      color: #667;
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
       font-size: 13px;
+      color: var(--muted);
     }
-    .hint {
-      color: #7a8793;
-      font-size: 13px;
+
+    select, input {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, background 0.25s ease, color 0.25s ease;
     }
-    .flex {
+
+    select:focus, input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .stats {
       display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-    .footer {
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
-    }
-    .admin-indicator {
-      margin-left: 10px;
-      color: var(--accent-red);
-      font-weight: 700;
-    }
-    /* Modern login form tweaks */
-    .login-form {
-      display: flex;
-      gap: 8px;
+      margin-top: 14px;
       align-items: center;
     }
-    .login-form input {
-      width: 200px;
-    }
-    @media (max-width: 760px) {
-      .meta { max-width: 60%; }
-      .row { flex-direction: column; }
-      .flex { width: 100%; justify-content: space-between; }
-    }
-    /* List display */
-    .list {
-      margin-top: 16px;
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-    .item {
-      padding: 16px;
-      border-radius: 10px;
-      background: #fcfeff;
-      border: none;
-      box-shadow: 0 1px 3px rgba(18,38,63,0.06);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: box-shadow 0.18s, transform 0.06s;
-    }
-    .item:hover {
-      box-shadow: 0 8px 20px rgba(18,38,63,0.08);
-      transform: translateY(-2px);
-    }
-    .item .actions {
-      display: flex;
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
-      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(245, 158, 11, 0.16);
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .panel {
+      margin-top: 16px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .results-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .results-title {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--card-bg);
+      border: 1px solid #f0d7bc;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: cardIn 0.38s ease forwards;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.25s ease;
+    }
+
+    [data-theme="dark"] .card {
+      border-color: #303844;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-strong);
+      border-color: var(--border-2);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(245, 158, 11, 0.05) 50%, transparent 100%);
+      transform: translateX(-100%);
+      pointer-events: none;
+    }
+
+    .card:hover::before {
+      animation: sheen 1s ease;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    .mini-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
       justify-content: flex-end;
     }
-    .meta h4 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      color: #223;
+
+    .tag {
+      font-size: 11px;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(245, 158, 11, 0.16);
+      color: var(--accent-2);
     }
-    .meta p {
+
+    .content-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .copy-block {
+      border: 1px solid #f0d7bc;
+      border-radius: 14px;
+      background: var(--block-bg);
+      padding: 12px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    [data-theme="dark"] .copy-block {
+      border-color: #333c49;
+    }
+
+    .copy-block:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.06);
+      transform: translateY(-1px);
+      background: rgba(255, 237, 213, 0.96);
+    }
+
+    [data-theme="dark"] .copy-block:hover {
+      background: #252d3b;
+    }
+
+    .copy-block-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .copy-label {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+    }
+
+    .content {
       margin: 0;
-      color: #333;
       white-space: pre-line;
       word-break: break-word;
+      color: var(--text);
+      line-height: 1.55;
       font-size: 14px;
-      line-height: 1.45;
+      min-height: 24px;
     }
-    /* Copy button styles */
-    .btn-copy {
-      background: transparent;
-      border: 1px dashed var(--accent);
-      color: var(--accent);
+
+    .card-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
     }
-    .btn-copy:hover {
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 12px;
       background: var(--accent);
       color: #fff;
+      box-shadow: 0 6px 16px rgba(180, 35, 24, 0.14);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(180, 35, 24, 0.18);
+    }
+
+    button:active {
+      transform: translateY(1px);
+      opacity: 0.96;
+    }
+
+    .ghost {
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .ghost:hover {
       border-color: var(--accent);
+      background: var(--accent-soft);
     }
-    .btn-delete {
-      background: var(--accent-red);
+
+    .small {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .empty {
+      padding: 20px;
+      text-align: center;
+      border-radius: 16px;
+      border: 1px dashed var(--border-2);
+      color: var(--muted);
+      background: rgba(127, 127, 127, 0.04);
+    }
+
+    .footer {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%) translateY(16px);
+      opacity: 0;
+      background: rgba(16, 24, 40, 0.92);
       color: #fff;
+      padding: 11px 16px;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.2);
+      z-index: 9999;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      pointer-events: none;
     }
-    .btn-delete:hover {
-      filter: brightness(0.92);
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.988); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes sheen {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 14px; }
+      .wrap { padding: 16px; border-radius: 18px; }
+      .field { min-width: 100%; }
+      .card-top { flex-direction: column; }
+      .mini-tags { justify-content: flex-start; }
+      .results-head { align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+    <div class="topbar">
       <div>
         <h1>Quản lý Rủi ro (Risk Manager) <span>- @Ren</span></h1>
-        <p class="lead">Chọn Nhóm Lỗi → Hướng Xử Lý (chỉ hiển thị các lỗi trong Nhóm Lỗi đó). Hãy liên hệ lại với cấp trên nếu có bất kì thắc mắc nào</p>
+        <p class="lead">Chọn Nhóm Lỗi rồi xem kết quả theo từng ô riêng. Nhấn vào từng khung để copy đúng phần đó. Nếu nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách thành 2 phần để copy riêng cho nhanh.</p>
       </div>
-      <div style="text-align: right;">
-        <div style="margin-bottom: 8px;">
-          <button id="loginBtn" class="small ghost">Đăng nhập Admin</button>
-          <div id="loginForm" class="login-form" style="display: none;">
-            <input id="adminPwdInput" type="password" placeholder="Mật khẩu Admin">
-            <button id="loginConfirmBtn" class="small ghost">OK</button>
-          </div>
-          <button id="logoutBtn" class="small ghost" style="display: none;">Thoát Admin</button>
-          <span id="adminStatus" class="admin-indicator" style="display: none;">ADMIN</span>
-        </div>
-        <div class="hint">Admin: có quyền sửa</div>
+      <div class="controls-top">
+        <button id="themeToggle" class="theme-toggle" type="button">Chuyển sang Dark</button>
       </div>
     </div>
 
-    <div class="row" style="margin-top: 8px;">
-      <div style="flex: 1; min-width: 220px;">
-        <label class="muted">Chọn Nhóm Lỗi</label>
+    <div class="filters">
+      <div class="field">
+        <label for="systemSelect">Chọn Nhóm Lỗi</label>
         <select id="systemSelect"></select>
       </div>
-      <div style="flex: 1; min-width: 220px;">
-        <label class="muted">Cách Xử Lý</label>
+      <div class="field">
+        <label for="groupSelect">Cách Xử Lý</label>
         <select id="groupSelect"></select>
       </div>
-      <div style="min-width: 160px;">
-        <label class="muted">Tìm (tiêu đề / nội dung)</label>
-        <input id="searchBox" class="search" placeholder="Gõ từ khóa...">
+      <div class="field">
+        <label for="searchBox">Tìm (tiêu đề / nội dung)</label>
+        <input id="searchBox" placeholder="Gõ từ khóa..." />
       </div>
+    </div>
+
+    <div class="stats">
+      <span class="badge" id="countBadge">0 mục</span>
+      <span class="badge">Không rõ nguồn tiền → không duyệt • Không chắc → hỏi cấp trên • Không suy đoán theo cảm tính • Mọi quyết định đều phải giải thích được</span>
+      <span class="badge">XỬ LÝ NHANH - CHÍNH XÁC - HẠN CHẾ SAI SÓT</span>
     </div>
 
     <div class="panel">
-      <div class="row">
-        <div style="flex: 1;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="muted">Kết quả</div>
-            <div>
-              <button id="copyOutputBtn" class="small ghost">Sao chép</button>
-            </div>
-          </div>
-          <div id="output" class="content">Chọn Nhóm Lỗi và Cách Xử Lý để xem nội dung</div>
-        </div>
-        <div style="width: 320px;">
-          <div class="muted">Thêm / Sửa mục</div>
-          <input id="newSystem" placeholder="Nhóm Lỗi (vd: Nhận 500)" />
-          <input id="newGroup" placeholder="Nhóm lỗi (vd: TRÙNG IP)" />
-          <input id="newTitle" placeholder="Tiêu đề (vd: NHẬN 500 TRÙNG IP)" />
-          <textarea id="newContent" rows="6" placeholder="Nội dung chi tiết..."></textarea>
-          <div class="controls" style="margin-top: 8px;">
-            <button id="addButton" class="small admin-only">ADD</button>
-            <button id="updateButton" class="small ghost admin-only" style="display: none;">UPDATE</button>
-            <button id="clearForm" class="small">CLEAR</button>
-          </div>
-        </div>
+      <div class="results-head">
+        <div class="results-title" id="resultsTitle">Kết quả sẽ hiển thị ở đây</div>
+        <button id="copyAllBtn" class="small ghost" type="button">Copy toàn bộ kết quả</button>
       </div>
+      <div id="results" class="grid"></div>
     </div>
 
     <div class="footer">
-      <div class="flex">
-        <button id="exportBtn" class="small">Export JSON</button>
-        <label class="file-input small ghost admin-only" style="padding: 6px 10px; cursor: pointer;">
-          Import JSON <input id="importFile" type="file" accept="application/json" style="display: none;">
-        </label>
-        <button id="resetBtn" class="small ghost admin-only">Reset to default</button>
-      </div>
-      <div class="hint">Lưu ý: dữ liệu sẽ được tải từ file data.json. Dùng Export để chia sẻ (file .json).</div>
+      <div>Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
     </div>
-
-    <hr style="margin: 12px 0; border: none; border-top: 1px dashed #eef3fb;">
-    <div class="list" id="listArea"></div>
   </div>
 
+  <div id="toast" class="toast"></div>
+
 <script>
-/* ------------------ DOM refs ------------------ */
 const systemSelect = document.getElementById('systemSelect');
 const groupSelect = document.getElementById('groupSelect');
-const output = document.getElementById('output');
-const listArea = document.getElementById('listArea');
 const searchBox = document.getElementById('searchBox');
+const results = document.getElementById('results');
+const resultsTitle = document.getElementById('resultsTitle');
+const countBadge = document.getElementById('countBadge');
+const copyAllBtn = document.getElementById('copyAllBtn');
+const themeToggle = document.getElementById('themeToggle');
+const toast = document.getElementById('toast');
 
-const newSystem = document.getElementById('newSystem');
-const newGroup = document.getElementById('newGroup');
-const newTitle = document.getElementById('newTitle');
-const newContent = document.getElementById('newContent');
-const addButton = document.getElementById('addButton');
-const updateButton = document.getElementById('updateButton');
-const clearForm = document.getElementById('clearForm');
+const THEME_KEY = 'risk_manager_theme_v2';
 
-const exportBtn = document.getElementById('exportBtn');
-const importFile = document.getElementById('importFile');
-const resetBtn = document.getElementById('resetBtn');
-
-const loginBtn = document.getElementById('loginBtn');
-const logoutBtn = document.getElementById('logoutBtn');
-const adminStatus = document.getElementById('adminStatus');
-const loginForm = document.getElementById('loginForm');
-const adminPwdInput = document.getElementById('adminPwdInput');
-const loginConfirmBtn = document.getElementById('loginConfirmBtn');
-
-/* ------------------ CẤU HÌNH ADMIN ------------------ */
-const ADMIN_PASSWORD = 'admin'; // <-- đổi giá trị nếu cần
-const ADMIN_LS_KEY = 'isAdmin_v1';
-
-/* ------------------ GitHub configuration ------------------ */
-// GitHub token lấy từ RISK_MANAGER_TOKEN (localStorage) để ẩn token
-const GITHUB_TOKEN = localStorage.getItem('RISK_MANAGER_TOKEN');
-const GITHUB_OWNER  = 'fengkong0101-ux';
-const GITHUB_REPO   = 'Risk-Control';
-const GITHUB_BRANCH = 'main';
-
-/* ------------------ HÀM MÃ HÓA BASE64 ------------------ */
-function base64Encode(str) {
-  return window.btoa(unescape(encodeURIComponent(str)));
-}
-
-/* ------------------ Lưu dữ liệu lên GitHub ------------------ */
-async function saveDataToGitHub() {
-  if (!isAdmin()) return;
-
-  const content = JSON.stringify(data, null, 2);
-  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/data.json`;
-
-  try {
-    // Lấy thông tin file hiện tại để có sha mới nhất
-    const fileRes = await fetch(`${url}?ref=${GITHUB_BRANCH}`);
-    const fileData = await fileRes.json();
-    const sha = fileData.sha;
-
-    const body = {
-      message: sha ? 'Update data via admin UI' : 'Create data via admin UI',
-      branch: GITHUB_BRANCH,
-      content: base64Encode(content)
-    };
-    if (sha) body.sha = sha;
-
-    const putRes = await fetch(url, {
-      method: 'PUT',
-      headers: {
-        'Authorization': 'token ' + GITHUB_TOKEN,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
-
-    const result = await putRes.json();
-    if (result.content) {
-      alert('Dữ liệu đã được lưu trên GitHub!');
-    } else {
-      alert('Lưu thất bại: ' + JSON.stringify(result));
-    }
-  } catch (err) {
-    console.error('GitHub save error:', err);
-    alert('Lưu thất bại do lỗi mạng hoặc token');
-  }
-}
-
-
-/* ------------------ DỮ LIỆU MẶC ĐỊNH ------------------ */
 const DEFAULT_DATA = [
-  { system: "RUMMY", group: "TRÙNG IP", title: "RUMMY TRÙNG IP", content: "會員ID : \n*拒絕原因 : 我本人沒有充值，上級有多個IP地址，不符合RUMMY MATCH的提現條件。\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵" },
-  { system: "RUMMY", group: "KHÔNG NẠP", title: "RUMMY KHÔNG NẠP", content: "會員ID : \n*拒絕原因 : 我和上級都領取了獎勵，但還未充值，未達到提現獎勵的條件。\n*會員風險評級 : 中嫌疑\n*結論 : 要求會員充值。" },
-  { system: "RUMMY", group: "TỈ LỆ THẤP", title: "RUMMY TỈ LỆ THẤP", content: "會員ID : \n*拒絕原因 : 以低投注比例領取 RUMMY 獎勵\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵" },
-  { system: "CHƠI MỨC CƯỢC QUÁ THẤP", group: "TỈ LỆ THẤP", title: "CHƠI MỨC CƯỢC QUÁ THẤP - TỈ LỆ THẤP", content: "會員ID : \n*拒絕原因 : 故意下注小額，達到流水直接提現 刷首充獎勵\n*會員風險評級 : 中嫌疑\n*結論 : 讓會員繼續下注" }
+  { system: 'RUMMY', group: 'TRÙNG IP', title: 'RUMMY TRÙNG IP', content: '會員ID :\n*拒絕原因 : 我本人沒有充值，上級有多個IP地址，不符合RUMMY MATCH的提現條件。\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵' },
+  { system: 'RUMMY', group: 'KHÔNG NẠP', title: 'RUMMY KHÔNG NẠP', content: '會員ID :\n*拒絕原因 : 我和上級都領取了獎勵，但還未充值，未達到提現獎勵的條件。\n*會員風險評級 : 中嫌疑\n*結論 : 要求會員充值。' },
+  { system: 'RUMMY', group: 'TỈ LỆ THẤP', title: 'RUMMY TỈ LỆ THẤP', content: '會員ID :\n*拒絕原因 : 以低投注比例領取 RUMMY 獎勵\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵' },
+  { system: 'CHƠI MỨC CƯỢC QUÁ THẤP', group: 'TỈ LỆ THẤP', title: 'CHƠI MỨC CƯỢC QUÁ THẤP - TỈ LỆ THẤP', content: '會員ID :\n*拒絕原因 : 故意下注小額，達到流水直接提現 刷首充獎勵\n*會員風險評級 : 中嫌疑\n*結論 : 讓會員繼續下注' }
 ];
 
-/* ------------------ DỮ LIỆU HIỆN TẠI ------------------ */
 let data = [];
-let editIndex = -1;
 
-/* ------------------ CHỨC NĂNG QUYỀN ------------------ */
-function isAdmin() { return localStorage.getItem(ADMIN_LS_KEY) === '1'; }
-function applyPermission() {
-  document.querySelectorAll('.admin-only').forEach(el => {
-    el.style.display = isAdmin() ? '' : 'none';
-  });
-  if (isAdmin()) {
-    loginBtn.style.display = 'none';
-    loginForm.style.display = 'none';
-    logoutBtn.style.display = '';
-    adminStatus.style.display = '';
-  } else {
-    loginBtn.style.display = '';
-    loginForm.style.display = 'none';
-    logoutBtn.style.display = 'none';
-    adminStatus.style.display = 'none';
+function safeCopy(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  textarea.style.top = '0';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+
+  try {
+    const ok = document.execCommand('copy');
+    document.body.removeChild(textarea);
+    return ok ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+  } catch (err) {
+    document.body.removeChild(textarea);
+    return Promise.reject(err);
   }
 }
 
-/* ------------------ CHỨC NĂNG HIỂN THỊ ------------------ */
-function getUniqueSystems() {
-  return [...new Set(data.map(d => d.system))].sort();
-}
-function getGroupsFor(system) {
-  return [...new Set(data.filter(d => d.system === system).map(d => d.group))].sort();
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => toast.classList.remove('show'), 1300);
 }
 
-function populateSystems() {
-  const selected = systemSelect.value;
+function unique(values) {
+  return [...new Set(values)].sort();
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeToggle.textContent = theme === 'dark' ? 'Chuyển sang Light' : 'Chuyển sang Dark';
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+}
+
+function populateSystemOptions() {
+  const current = systemSelect.value;
+  const systems = unique(data.map(d => d.system));
+
   systemSelect.innerHTML = '';
-  getUniqueSystems().forEach(s => {
-    const o = document.createElement('option');
-    o.value = s; o.textContent = s;
-    systemSelect.appendChild(o);
+  const optAll = document.createElement('option');
+  optAll.value = '';
+  optAll.textContent = 'Tất cả nhóm lỗi';
+  systemSelect.appendChild(optAll);
+
+  systems.forEach(system => {
+    const opt = document.createElement('option');
+    opt.value = system;
+    opt.textContent = system;
+    systemSelect.appendChild(opt);
   });
-  if (selected && [...systemSelect.options].some(o => o.value === selected)) {
-    systemSelect.value = selected;
+
+  if (current && [...systemSelect.options].some(o => o.value === current)) {
+    systemSelect.value = current;
   }
-  populateGroups();
 }
 
-function populateGroups() {
-  const sys = systemSelect.value;
+function populateGroupOptions() {
+  const system = systemSelect.value;
+  const current = groupSelect.value;
+  const groups = system ? unique(data.filter(d => d.system === system).map(d => d.group)) : unique(data.map(d => d.group));
+
   groupSelect.innerHTML = '';
-  const allOpt = document.createElement('option');
-  allOpt.value = '';
-  allOpt.textContent = 'Tất cả nhóm';
-  groupSelect.appendChild(allOpt);
-  if (sys) {
-    const groups = getGroupsFor(sys);
-    groups.forEach(g => {
-      const o = document.createElement('option');
-      o.value = g; o.textContent = g;
-      groupSelect.appendChild(o);
-    });
-  }
-  populateContent();
-  renderList();
-}
+  const optAll = document.createElement('option');
+  optAll.value = '';
+  optAll.textContent = 'Tất cả cách xử lý';
+  groupSelect.appendChild(optAll);
 
-function populateContent() {
-  const sys = systemSelect.value;
-  const grp = groupSelect.value;
-  if (!sys) {
-    output.textContent = 'Chọn Hệ để xem nội dung';
-    return;
-  }
-  let items = [];
-  if (!grp) items = data.filter(d => d.system === sys);
-  else items = data.filter(d => d.system === sys && d.group === grp);
-  if (items.length) {
-    output.textContent = items.map(i => `Tiêu đề: ${i.title}\n${i.content}`).join('\n\n');
-  } else {
-    output.textContent = 'Không có dữ liệu';
+  groups.forEach(group => {
+    const opt = document.createElement('option');
+    opt.value = group;
+    opt.textContent = group;
+    groupSelect.appendChild(opt);
+  });
+
+  if (current && [...groupSelect.options].some(o => o.value === current)) {
+    groupSelect.value = current;
   }
 }
 
-function renderList() {
-  listArea.innerHTML = '';
-  const q = (searchBox.value || '').trim().toLowerCase();
-  data.forEach((d, idx) => {
-    if (q) {
-      const hay = (d.title + ' ' + d.content + ' ' + d.system + ' ' + d.group).toLowerCase();
-      if (!hay.includes(q)) return;
-    }
-    const item = document.createElement('div'); item.className = 'item';
-    const meta = document.createElement('div'); meta.className = 'meta';
-    const h4 = document.createElement('h4');
-    h4.textContent = `${d.title} — ${d.system} / ${d.group}`;
-    const p = document.createElement('p'); p.textContent = d.content;
-    meta.appendChild(h4); meta.appendChild(p);
+function splitContent(text) {
+  const match = text.match(/^(.*?)(?:\n+)?\*\s*WD ABNORMAL\s*(.*)$/is);
+  if (!match) {
+    return { main: text.trim(), note: null };
+  }
 
-    const actions = document.createElement('div'); actions.className = 'actions';
-    const btnCopy = document.createElement('button');
-    btnCopy.className = 'small btn-copy';
-    btnCopy.textContent = 'Sao chép';
-    btnCopy.onclick = () => {
-      navigator.clipboard.writeText(d.content)
-        .then(() => alert('Nội dung đã được sao chép!'))
-        .catch(() => alert('Sao chép thất bại'));
-    };
-    actions.appendChild(btnCopy);
+  const main = (match[1] || '').trim();
+  const note = ('* WD ABNORMAL ' + (match[2] || '').trim()).trim();
+  return { main, note };
+}
 
-    if (isAdmin()) {
-      const btnEdit = document.createElement('button');
-      btnEdit.textContent = 'Sửa';
-      btnEdit.className = 'small ghost';
-      btnEdit.onclick = () => { startEdit(idx); };
-      actions.appendChild(btnEdit);
+function getFilteredData() {
+  const system = systemSelect.value;
+  const group = groupSelect.value;
+  const q = searchBox.value.trim().toLowerCase();
 
-      const btnDel = document.createElement('button');
-      btnDel.textContent = 'Xóa';
-      btnDel.className = 'small btn-delete';
-      btnDel.onclick = () => {
-        if (!isAdmin()) { alert('Bạn không có quyền xóa'); return; }
-        if (confirm('Xác nhận xóa mục này?')) {
-          data.splice(idx, 1);
-          populateSystems();
-          saveDataToGitHub(); // Lưu dữ liệu sau khi xóa
-        }
-      };
-      actions.appendChild(btnDel);
-    }
-
-    item.appendChild(meta);
-    item.appendChild(actions);
-    listArea.appendChild(item);
+  return data.filter(item => {
+    if (system && item.system !== system) return false;
+    if (group && item.group !== group) return false;
+    if (!q) return true;
+    const hay = `${item.title} ${item.content} ${item.system} ${item.group}`.toLowerCase();
+    return hay.includes(q);
   });
 }
 
-/* ------------------ THÊM / SỬA ------------------ */
-addButton.addEventListener('click', () => {
-  const sys = newSystem.value.trim();
-  const grp = newGroup.value.trim();
-  const title = newTitle.value.trim();
-  const cont = newContent.value.trim();
-  if (!sys || !grp || !title || !cont) {
-    alert('Vui lòng nhập đầy đủ Hệ, Nhóm lỗi, Tiêu đề và Nội dung');
-    return;
-  }
-  data.push({ system: sys, group: grp, title: title, content: cont });
-  clearInputs();
-  populateSystems();
-  // Sau khi thêm, chọn hệ và nhóm mới
-  systemSelect.value = sys;
-  populateGroups();
-  groupSelect.value = grp;
-  populateContent();
-  renderList();
-  saveDataToGitHub(); // Lưu dữ liệu sau khi thêm
-});
-
-function startEdit(idx) {
-  if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để sửa'); return; }
-  editIndex = idx;
-  const d = data[idx];
-  newSystem.value = d.system;
-  newGroup.value = d.group;
-  newTitle.value = d.title;
-  newContent.value = d.content;
-  updateButton.style.display = 'inline-block';
-  addButton.style.display = 'none';
+function attachCopyOnClick(element, text, toastMessage) {
+  element.addEventListener('click', (e) => {
+    e.stopPropagation();
+    safeCopy(text)
+      .then(() => showToast(toastMessage))
+      .catch(() => showToast('Copy thất bại'));
+  });
 }
 
-updateButton.addEventListener('click', () => {
-  if (editIndex < 0) { alert('Không có mục nào đang sửa'); return; }
-  const sys = newSystem.value.trim();
-  const grp = newGroup.value.trim();
-  const title = newTitle.value.trim();
-  const cont = newContent.value.trim();
-  if (!sys || !grp || !title || !cont) {
-    alert('Vui lòng nhập đầy đủ Hệ, Nhóm lỗi, Tiêu đề và Nội dung');
+function render() {
+  const filtered = getFilteredData();
+  results.innerHTML = '';
+  countBadge.textContent = `${filtered.length} mục`;
+
+  const systemLabel = systemSelect.value || 'Tất cả nhóm lỗi';
+  const groupLabel = groupSelect.value || 'Tất cả cách xử lý';
+  resultsTitle.textContent = `Đang xem: ${systemLabel} / ${groupLabel}`;
+
+  if (!filtered.length) {
+    results.innerHTML = '<div class="empty">Không có dữ liệu phù hợp với bộ lọc hiện tại.</div>';
     return;
   }
-  data[editIndex] = { system: sys, group: grp, title: title, content: cont };
-  editIndex = -1;
-  clearInputs();
-  addButton.style.display = 'inline-block';
-  updateButton.style.display = 'none';
-  populateSystems();
-  saveDataToGitHub(); // Lưu dữ liệu sau khi cập nhật
-});
 
-clearForm.addEventListener('click', () => { clearInputs(); });
-function clearInputs() {
-  newSystem.value = '';
-  newGroup.value = '';
-  newTitle.value = '';
-  newContent.value = '';
-}
+  filtered.forEach((item, index) => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.style.animationDelay = `${Math.min(index * 45, 280)}ms`;
 
-/* ------------------ Export / Import ------------------ */
-exportBtn.addEventListener('click', () => {
-  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'riskData.json'; a.click();
-  URL.revokeObjectURL(url);
-});
+    const top = document.createElement('div');
+    top.className = 'card-top';
 
-importFile.addEventListener('change', (e) => {
-  if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để import'); importFile.value = ''; return; }
-  const f = e.target.files[0]; if (!f) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const arr = JSON.parse(reader.result);
-      if (!Array.isArray(arr)) throw new Error('File không đúng định dạng (cần mảng JSON)');
-      if (confirm('Nhập file sẽ **thay thế** dữ liệu hiện tại. Bạn có muốn tiếp tục?')) {
-        data = arr; populateSystems(); alert('Nhập file thành công');
-      }
-    } catch(err) {
-      alert('Lỗi khi đọc file: ' + err.message);
+    const titleWrap = document.createElement('div');
+    const h4 = document.createElement('h4');
+    h4.className = 'title';
+    h4.textContent = item.title;
+    titleWrap.appendChild(h4);
+
+    const tags = document.createElement('div');
+    tags.className = 'mini-tags';
+    [item.system, item.group].forEach(tagText => {
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = tagText;
+      tags.appendChild(tag);
+    });
+
+    top.appendChild(titleWrap);
+    top.appendChild(tags);
+
+    const split = splitContent(item.content);
+    const contentGroup = document.createElement('div');
+    contentGroup.className = 'content-group';
+
+    const mainBlock = document.createElement('div');
+    mainBlock.className = 'copy-block';
+    const mainHead = document.createElement('div');
+    mainHead.className = 'copy-block-head';
+    const mainLabel = document.createElement('div');
+    mainLabel.className = 'copy-label';
+    mainLabel.textContent = 'Phần chính';
+    const mainCopyBtn = document.createElement('button');
+    mainCopyBtn.className = 'small ghost';
+    mainCopyBtn.type = 'button';
+    mainCopyBtn.textContent = 'Copy phần chính';
+    mainHead.appendChild(mainLabel);
+    mainHead.appendChild(mainCopyBtn);
+    const mainText = document.createElement('p');
+    mainText.className = 'content';
+    mainText.textContent = split.main;
+    mainBlock.appendChild(mainHead);
+    mainBlock.appendChild(mainText);
+    attachCopyOnClick(mainBlock, split.main, 'Đã copy phần chính');
+    attachCopyOnClick(mainCopyBtn, split.main, 'Đã copy phần chính');
+    contentGroup.appendChild(mainBlock);
+
+    if (split.note) {
+      const noteBlock = document.createElement('div');
+      noteBlock.className = 'copy-block';
+      const noteHead = document.createElement('div');
+      noteHead.className = 'copy-block-head';
+      const noteLabel = document.createElement('div');
+      noteLabel.className = 'copy-label';
+      noteLabel.textContent = 'Ghi chú';
+      const noteCopyBtn = document.createElement('button');
+      noteCopyBtn.className = 'small ghost';
+      noteCopyBtn.type = 'button';
+      noteCopyBtn.textContent = 'Copy Ghi Chú';
+      noteHead.appendChild(noteLabel);
+      noteHead.appendChild(noteCopyBtn);
+      const noteText = document.createElement('p');
+      noteText.className = 'content';
+      noteText.textContent = split.note;
+      noteBlock.appendChild(noteHead);
+      noteBlock.appendChild(noteText);
+      attachCopyOnClick(noteBlock, split.note, 'Đã copy ghi chú');
+      attachCopyOnClick(noteCopyBtn, split.note, 'Đã copy ghi chú');
+      contentGroup.appendChild(noteBlock);
     }
-  };
-  reader.readAsText(f);
-});
 
-resetBtn.addEventListener('click', () => {
-  if (!isAdmin()) { alert('Bạn cần đăng nhập Admin để reset'); return; }
-  if (confirm('Reset về dữ liệu mặc định?')) {
-    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
-    applyPermission();
-    populateSystems();
+    const actions = document.createElement('div');
+    actions.className = 'card-actions';
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'small ghost';
+    copyBtn.type = 'button';
+    copyBtn.textContent = 'Copy toàn bộ';
+    copyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      safeCopy(item.content)
+        .then(() => showToast('Đã copy toàn bộ'))
+        .catch(() => showToast('Copy thất bại'));
+    });
+
+    actions.appendChild(copyBtn);
+    card.appendChild(top);
+    card.appendChild(contentGroup);
+    card.appendChild(actions);
+    results.appendChild(card);
+  });
+}
+
+function copyAllVisible() {
+  const filtered = getFilteredData();
+  if (!filtered.length) {
+    showToast('Không có nội dung để copy');
+    return;
   }
+
+  const text = filtered.map(item => `Tiêu đề: ${item.title}\n${item.content}`).join('\n\n----------------\n\n');
+  safeCopy(text)
+    .then(() => showToast('Đã copy toàn bộ kết quả'))
+    .catch(() => showToast('Copy thất bại'));
+}
+
+systemSelect.addEventListener('change', () => {
+  populateGroupOptions();
+  render();
 });
 
-/* ------------------ SEARCH / FILTER ------------------ */
-searchBox.addEventListener('input', () => { renderList(); });
-systemSelect.addEventListener('change', () => { populateGroups(); });
-groupSelect.addEventListener('change', () => { populateContent(); renderList(); });
-
-/* ------------------ COPY KẾT QUẢ ------------------ */
-const copyOutputBtn = document.getElementById('copyOutputBtn');
-copyOutputBtn.addEventListener('click', () => {
-  const text = output.textContent;
-  navigator.clipboard.writeText(text)
-    .then(() => alert('Nội dung kết quả đã được sao chép!'))
-    .catch(() => alert('Sao chép thất bại'));
+groupSelect.addEventListener('change', render);
+searchBox.addEventListener('input', render);
+copyAllBtn.addEventListener('click', copyAllVisible);
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-/* ------------------ ADMIN LOGIN ------------------ */
-loginBtn.addEventListener('click', () => {
-  loginForm.style.display = 'flex';
-  loginBtn.style.display = 'none';
-  adminPwdInput.focus();
-});
+(function runBasicChecks() {
+  console.assert(typeof safeCopy === 'function', 'safeCopy should be defined');
+  console.assert(Array.isArray(DEFAULT_DATA) && DEFAULT_DATA.length > 0, 'DEFAULT_DATA should not be empty');
+})();
 
-loginConfirmBtn.addEventListener('click', () => {
-  const pwd = adminPwdInput.value;
-  if (pwd === ADMIN_PASSWORD) {
-    localStorage.setItem(ADMIN_LS_KEY, '1');
-    applyPermission();
-    alert('Đăng nhập Admin thành công');
-    renderList();
-  } else {
-    alert('Sai mật khẩu');
-  }
-});
+initTheme();
 
-logoutBtn.addEventListener('click', () => {
-  localStorage.removeItem(ADMIN_LS_KEY);
-  applyPermission();
-  alert('Đã thoát Admin');
-  renderList();
-});
-
-/* ------------------ INITIAL LOAD ------------------ */
-// Tải dữ liệu từ file data.json
 fetch('data.json')
-  .then(response => response.json())
-  .then(arr => {
-    data = arr;
-    applyPermission();
-    populateSystems();
+  .then(r => {
+    if (!r.ok) throw new Error('data.json not found');
+    return r.json();
   })
-  .catch(error => {
-    console.error('Error loading data.json:', error);
-    // Nếu không tải được, dùng dữ liệu mặc định
-    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
-    applyPermission();
-    populateSystems();
+  .then(arr => {
+    data = Array.isArray(arr) ? arr : DEFAULT_DATA.slice();
+    populateSystemOptions();
+    populateGroupOptions();
+    render();
+  })
+  .catch(() => {
+    data = DEFAULT_DATA.slice();
+    populateSystemOptions();
+    populateGroupOptions();
+    render();
   });
 </script>
 </body>
 </html>
-
-
