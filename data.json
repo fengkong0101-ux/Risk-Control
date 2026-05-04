@@ -9,19 +9,19 @@
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "TỪ CHỐI",
     "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ (Nạp dưới 500 cược cố định dưới 2 đồng và nạp từ 500 đến 2k cược dưới 3đ là vi phạm) - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因l: *拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 ×3\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 ×3\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
   },
    {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "KHẤU TRẢ NẠP",
     "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ (Nạp dưới 500 cược cố định dưới 2 đồng và nạp từ 500 đến 2k cược dưới 3đ là vi phạm) - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因l: *拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 扣除全部余额并退还押金\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 扣除全部余额并退还押金\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
   },
    {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "KHÓA TÀI KHOẢN",
     "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ (Nạp dưới 500 cược cố định dưới 2 đồng và nạp từ 500 đến 2k cược dưới 3đ là vi phạm) - KHÓA TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因l: *拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 冻结\n* ABNORMAL FIXED LOW BET - FREEZE ACCOUNT"
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 冻结\n* ABNORMAL FIXED LOW BET - FREEZE ACCOUNT"
   },
   {
     "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
