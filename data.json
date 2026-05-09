@@ -230,6 +230,15 @@
 {
   "system": "CƯỢC BẤT THƯỜNG",
   "group": "CƯỢC TẤT TAY",
+  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论 : *会员ID : 
+*拒绝原因 :下注低赔率
+*会员风险评级 : 中度怀疑
+*结论 :  让会员继续投注，流水 ×3\n*  WD ABNORMAL ALL-IN [NGÀY]"
+},
+{
+  "system": "CƯỢC BẤT THƯỜNG",
+  "group": "CƯỢC TẤT TAY",
   "title": "VI PHẠM CƯỢC TẤT TAY - KHẤU TRẢ NẠP",
   "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n*  WD ABNORMAL ALL-IN [NGÀY]"
 },
@@ -274,5 +283,17 @@
     "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
     "title": "CƯỢC BẤT THƯỜNG  7 UP 7 DOWN - TỪ CHỐI X3 VÒNG CƯỢC",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3"
+  },
+{
+    "system": "KHÔNG RÕ NGUỒN TIỀN",
+    "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
+    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀNN",
+    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n* 结论：该会员需进行充值。"
+  },
+{
+    "system": "KHÔNG RÕ NGUỒN TIỀN",
+    "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
+    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀNN",
+    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*SỐ LẦN: 3\n* 结论：扣除奖励。"
   }
 ]
