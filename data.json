@@ -86,7 +86,7 @@
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "CHƯA HOÀN THÀNH VÒNG CƯỢC",
-    "title": "NHẬN 500 VÒNG QUAY CHƯA HOÀN THÀNH VÒNG CƯỢC (TỪ CHỐI CƯỢC LẠI)",
+    "title": "NHẬN 500 VÒNG QUAY CHƯA HOÀN THÀNH VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
     "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3"
   },
   {
@@ -182,13 +182,13 @@
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
-  "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
+  "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
   "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-  "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
-  "title": "NHẬN KHUYẾN MÃI CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
+  "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+  "title": "NHẬN KHUYẾN MÃI CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
   "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
@@ -224,13 +224,7 @@
 {
   "system": "CƯỢC BẤT THƯỜNG",
   "group": "CƯỢC TẤT TAY",
-  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI BẮT CƯỢC LẠI",
-  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中嫌疑\n*结论 : 警告\n*  WD ABNORMAL ALL-IN [NGÀY]"
-},
-{
-  "system": "CƯỢC BẤT THƯỜNG",
-  "group": "CƯỢC TẤT TAY",
-  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI BẮT CƯỢC LẠI",
+  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI x3 VÒNG CƯỢC",
   "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL ALL-IN [NGÀY]"
 },
 {
