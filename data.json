@@ -230,11 +230,8 @@
 {
   "system": "CƯỢC BẤT THƯỜNG",
   "group": "CƯỢC TẤT TAY",
-  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论 : *会员ID : 
-*拒绝原因 :下注低赔率
-*会员风险评级 : 中度怀疑
-*结论 :  让会员继续投注，流水 ×3\n*  WD ABNORMAL ALL-IN [NGÀY]"
+  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI BẮT CƯỢC LẠI",
+  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL ALL-IN [NGÀY]"
 },
 {
   "system": "CƯỢC BẤT THƯỜNG",
