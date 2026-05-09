@@ -68,19 +68,19 @@
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP (TỪ CHỐI  LẦN T3 TREO)",
+    "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
     "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG CÓ NẠP",
-    "title": "NHẬN 500 VÒNG QUAY BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP (TỪ CHỐI  LẦN T3 TREO)",
+    "title": "NHẬN 500 VÒNG QUAY BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
     "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỈ LỆ THẤP",
-    "title": "NHẬN 500 VÒNG QUAY VI PHẠM TỈ LỆ THẤP (KHẤU  TRỪ THƯỞNG)",
+    "title": "NHẬN 500 VÒNG QUAY VI PHẠM TỈ LỆ THẤP -KHẤU  TRỪ THƯỞNG",
     "content": "会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 200\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励"
   },
   {
@@ -92,7 +92,7 @@
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỪ CHỐI NHIỀU LẦN KHÔNG NẠP",
-    "title": "NHẬN 500 VÒNG QUAY TỪ CHỐI NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
+    "title": "NHẬN 500 VÒNG QUAY TỪ CHỐI NHIỀU LẦN KHÔNG NẠP - KHẤU TRỪ THƯỞNG",
     "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n**时间: 3\n*结论 : 扣除奖励"
   },
   {
