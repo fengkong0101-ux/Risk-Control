@@ -276,6 +276,12 @@
     "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3"
   },
 {
+    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
+    "group": "CƯỢC BẤT THƯỜNG -  ROULETTE",
+    "title": "CƯỢC BẤT THƯỜNG ROULETTE- TỪ CHỐI X3 VÒNG CƯỢC",
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3"
+  },
+{
     "system": "KHÔNG RÕ NGUỒN TIỀN",
     "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
     "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀNN",
