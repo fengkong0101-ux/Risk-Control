@@ -579,8 +579,9 @@
     </div>
 
     <div class="tabs">
-      <button id="tabMain" class="tab-btn active" type="button">Danh sách</button>
-      <button id="tabMine" class="tab-btn" type="button">NỘI DUNG CỦA TÔI</button>
+      <button id="tabMain" class="tab-btn active" type="button">CẨM NANG XỬ LÝ 🎯</button>
+      <button id="tabMine" class="tab-btn" type="button">NỘI DUNG CỦA TÔI📌</button>
+      <button id="tabRules" class="tab-btn" type="button">HƯỚNG DẪN NGHIỆP VỤ ⭐</button>
     </div>
 
     <div id="mainArea">
@@ -633,12 +634,27 @@
       </div>
     </div>
 
+    <div id="rulesArea" style="display:none;">
+      <div class="panel" style="margin-top:16px;">
+        <div class="results-head">
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:4px; color: var(--text);">QUY TẮC LÀM VIỆC</div>
+            <div class="results-title">Nhấn vào tiêu đề để mở hoặc thu gọn nội dung.</div>
+          </div>
+        </div>
+        <div id="rulesList" class="grid"></div>
+      </div>
+    </div>
+
+
     <div class="footer">
       <div>Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
     </div>
   </div>
 
   <div id="toast" class="toast"></div>
+
+<script src="rules.js"></script>
 
 <script>
 const systemSelect = document.getElementById('systemSelect');
@@ -659,6 +675,105 @@ const stickyModeBtn = document.getElementById('stickyModeBtn');
 const clearStickyBtn = document.getElementById('clearStickyBtn');
 const mainArea = document.getElementById('mainArea');
 const mineArea = document.getElementById('mineArea');
+const tabRules = document.getElementById('tabRules');
+const rulesArea = document.getElementById('rulesArea');
+const rulesList = document.getElementById('rulesList');
+let rulesData = Array.isArray(window.RULES_DATA) ? window.RULES_DATA : [];
+
+tabRules.addEventListener('click', () => setTab('rules'));
+
+function renderRules() {
+  if (!rulesList) return;
+
+  rulesList.innerHTML = '';
+
+  if (!Array.isArray(rulesData) || !rulesData.length) {
+    rulesList.innerHTML = '<div class="empty">Không có dữ liệu rules.js</div>';
+    return;
+  }
+
+  rulesData.forEach((item, index) => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.style.animationDelay = `${Math.min(index * 45, 280)}ms`;
+    card.dataset.open = '0';
+
+    const top = document.createElement('div');
+    top.className = 'card-top';
+
+    const titleWrap = document.createElement('div');
+    titleWrap.className = 'title-wrap';
+
+    const chev = document.createElement('div');
+    chev.className = 'chev';
+    chev.textContent = '⌄';
+
+    const h4 = document.createElement('h4');
+    h4.className = 'title';
+    h4.textContent = item.title || '';
+
+    titleWrap.appendChild(chev);
+    titleWrap.appendChild(h4);
+
+    top.appendChild(titleWrap);
+
+    const contentGroup = document.createElement('div');
+    contentGroup.className = 'content-group';
+    contentGroup.style.display = 'none';
+
+    const mainBlock = document.createElement('div');
+    mainBlock.className = 'copy-block';
+
+    const mainHead = document.createElement('div');
+    mainHead.className = 'copy-block-head';
+
+    const mainLabel = document.createElement('div');
+    mainLabel.className = 'copy-label';
+    mainLabel.textContent = 'Nội dung';
+
+    const mainCopyBtn = document.createElement('button');
+    mainCopyBtn.className = 'small ghost';
+    mainCopyBtn.type = 'button';
+    mainCopyBtn.textContent = 'Copy nội dung';
+
+    mainHead.appendChild(mainLabel);
+    mainHead.appendChild(mainCopyBtn);
+
+    const mainText = document.createElement('p');
+    mainText.className = 'content';
+    mainText.textContent = item.content || '';
+
+    mainBlock.appendChild(mainHead);
+    mainBlock.appendChild(mainText);
+
+    attachCopyOnClick(mainBlock, item.content || '', 'Đã Copy nội dung');
+    attachCopyOnClick(mainCopyBtn, item.content || '', 'Đã Copy nội dung');
+
+    contentGroup.appendChild(mainBlock);
+
+    const expandHint = document.createElement('div');
+    expandHint.style.marginTop = '12px';
+    expandHint.style.fontSize = '12px';
+    expandHint.style.color = 'var(--muted)';
+    expandHint.textContent = 'Nhấn tiêu đề để mở nội dung';
+
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      if (e.target.closest('.content-group')) return;
+
+      const nowOpen = card.dataset.open !== '1';
+      card.dataset.open = nowOpen ? '1' : '0';
+      contentGroup.style.display = nowOpen ? 'grid' : 'none';
+      chev.textContent = nowOpen ? '⌃' : '⌄';
+      expandHint.textContent = nowOpen ? 'Nhấn vào card tiêu đề để thu gọn' : 'Nhấn vào card tiêu đề để mở nội dung';
+    });
+
+    card.appendChild(top);
+    card.appendChild(expandHint);
+    card.appendChild(contentGroup);
+    rulesList.appendChild(card);
+  });
+}
 
 const THEME_KEY = 'risk_manager_theme_v4';
 const STICKY_KEY = 'risk_manager_sticky_v1';
@@ -1149,11 +1264,22 @@ function render() {
 function setTab(tab) {
   currentTab = tab;
   localStorage.setItem(TAB_KEY, tab);
+
   tabMain.classList.toggle('active', tab === 'main');
   tabMine.classList.toggle('active', tab === 'mine');
+  tabRules.classList.toggle('active', tab === 'rules');
+
   mainArea.style.display = tab === 'main' ? 'block' : 'none';
   mineArea.style.display = tab === 'mine' ? 'block' : 'none';
-  if (tab === 'main') render(); else renderSticky();
+  rulesArea.style.display = tab === 'rules' ? 'block' : 'none';
+
+  if (tab === 'main') {
+    render();
+  } else if (tab === 'mine') {
+    renderSticky();
+  } else if (tab === 'rules') {
+    renderRules();
+  }
 }
 
 function initializeWithData(arr) {
@@ -1210,6 +1336,9 @@ searchBox.addEventListener('input', render);
 initTheme();
 loadSticky();
 initializeWithData(DEFAULT_DATA);
+
+rulesData = Array.isArray(window.RULES_DATA) ? window.RULES_DATA : [];
+renderRules();
 
 fetch('./data.json', { cache: 'no-store' })
   .then(r => {
