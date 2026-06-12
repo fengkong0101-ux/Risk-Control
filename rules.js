@@ -21,7 +21,7 @@ window.RULES_DATA = [
 },
 {
 "title": "QUY TẮC VÒNG CƯỢC ÁP DỤNG 777IN / 365IN",
-"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nVí dụ: Nạp 100 + KM 17 \nFB/GG: 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\nNẾU KHÁCH THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC!!"
+"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nVí dụ: Nạp 100 + KM 17 \nFB/GG: 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\nNẾU KHÁCH THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC!!"
 },
 {
 "title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500",
