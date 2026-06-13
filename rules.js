@@ -1,6 +1,6 @@
 window.RULES_DATA = [
 {
-"title": "QUY TẮC GHI CHÚ CHO THÀNH VIÊN Ở 3 LẦN RÚT ĐẦU TIÊN",
+"title": "QUY TẮC GHI CHÚ",
 "content": "3 LẦN RÚT TIỀN ĐẦU TIÊN của khách sau khi duyệt cần ghi chú theo format bên dưới:\n\nFormat:\n[1WD / 2WD / 3WD] + [NORMAL hoặc ABNORMAL] + [Lý do nếu ABNORMAL] + [DATE]\n\nVí dụ:\n\n- 1WD + NORMAL + DATE (11/20/2026)\n- 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n- 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\nCác trạng thái:\n\nNORMAL = Bình thường\nABNORMAL = Bất thường\nLý do bất thường gồm:\n• LOW ODDS = Tỷ lệ thấp\n• ALL IN\n• FIXED LOW BET = Cược cố định số tiền thấp\n• INCOMPLETE TURNOVER = Chưa hoàn thành vòng cược\n• HEAD TO HEAD BETTING = Đánh đối\n\nLưu ý:\n\nNếu khách đã qua lượt duyệt thứ 4 thì xóa ghi chú đi\nKHÔNG áp dụng cách ghi chú này cho khách cũ"
 },
 {
@@ -13,7 +13,7 @@ window.RULES_DATA = [
 },
 {
 "title": "QUY TẮC NHẬN THƯỞNG TIN NHẮN NỘI BỘ",
-"content": "站内信奖励 ( Phần thưởng tin nhắn nội bộ ) : - Phần thưởng này là hội viên phải thua tiền trong ngày/hội viên cũ không đăng nhập trong thời gian dài.\n- Phần thưởng này không có quy tắc cụ thể. Nếu hội viên chơi bình thường (ví dụ, hội viên nạp tiền vào tài khoản hàng ngày và đăng nhập thường xuyên), họ có thể nhận phần thưởng bình thường với số tiền rút không giới hạn.\n🔴 Chú ý kiểm tra nếu thành viên đã không nạp cách đây 7 ngày nếu đặt cược bình thường và đang thua lỗ trong trò chơi có thể rút dưới 200 nếu hết số dư. Nếu thành viên rút quá 200 thì yêu cầu thành viên nạp tiền vào.\n- Phần thưởng này là hội viên phải thua tiền trong ngày/hội viên cũ không đăng nhập trong thời gian dài."
+"content": "4 . 站内信奖励 ( Phần thưởng tin nhắn nội bộ ) : - Phần thưởng này là hội viên phải thua tiền trong ngày/hội viên cũ không đăng nhập trong thời gian dài.\n- Phần thưởng này không có quy tắc cụ thể. Nếu hội viên chơi bình thường (ví dụ, hội viên nạp tiền vào tài khoản hàng ngày và đăng nhập thường xuyên), họ có thể nhận phần thưởng bình thường với số tiền rút không giới hạn.\n🔴 Chú ý kiểm tra nếu thành viên đã không nạp cách đây 7 ngày nếu đặt cược bình thường và đang thua lỗ trong trò chơi có thể rút dưới 200 nếu hết số dư. Nếu thành viên rút quá 200 thì yêu cầu thành viên nạp tiền vào.\n- Phần thưởng này là hội viên phải thua tiền trong ngày/hội viên cũ không đăng nhập trong thời gian dài."
 },
 {
 "title": "QUY TẮC ÁP DỤNG VÒNG CƯỢC CHO CÁC NỀN TẢNG CŨ ! 11/05/2026",
@@ -21,7 +21,7 @@ window.RULES_DATA = [
 },
 {
 "title": "QUY TẮC VÒNG CƯỢC ÁP DỤNG 777IN / 365IN",
-"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nVí dụ: Nạp 100 + KM 17 \nFB/GG: 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\nNẾU KHÁCH THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC!!"
+"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nFB/GG: Nạp 100 + KM 17 = 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\nLưu ý\nThe 5x–6x turnover here means total bets divided by total deposits. If the customer completes the required 3x turnover, and the total bets divided by total deposits reaches 5x–6x turnover, then they can withdraw normally.\n\n777IN VỚI 365IN\nKÊNH ĐẦU TƯ ( TIỀN NẠP + KM ) * 3 VÒNG CƯỢC\nKÊNH KHÔNG ĐẦU TƯ ( TIỀN NẠP + TIỀN KM) * 5 VÒNG CƯỢC\n\nNẾU KHÁCH NÓ THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC."
 },
 {
 "title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500",
@@ -32,12 +32,16 @@ window.RULES_DATA = [
 "content": "NẾU THÀNH VIÊN CÓ NHẬN KHUYẾN MÃI ( NHẬN THƯỞNG BÀN XOAY )\nYÊU CẦU VÒNG CƯỢC :\n📢KÊNH ĐẦU TƯ YÊU CẦU HOÀN THÀNH ĐỦ 5 VÒNG CƯỢC ( SỐ DƯ HIỆN TẠI + 500 * 5 )\n📢KÊNH KHÔNG ĐẦU TƯ YÊU CẦU HOÀN THÀNH ĐỦ 8 VÒNG CƯỢC ( SỐ DƯ HIỆN TẠI + 500 * 8 )"
 },
 {
-"title": "QUY TẮC KHI IFSC AIRP0000001",
+"title": "IFSC AIRP0000001",
 "content": "Những Khách có IFSC AIRP0000001 , bên fengkong mình sẽ xuất thử qua 3 lần ( 3 đơn ) , nếu cả 3 lần đều thất bại thì lần thứ 4 thì mình báo cho bên sanfang như vậy , sau đó sanfang xử lý không được yêu càu mình từ chối khách sửa thông tin , thì mình sẽ dùng câu này.\n\nIFSC AIRP0000001 has frequent errors and may cause transaction issues. Please contact Customer Service for assistance."
 },
 {
 "title": "QUY TẮC QUY TRÌNH XỬ LÝ",
 "content": "Tối ưu xử lý RÚT TIỀN (15/03/2026)\n\n1️⃣. Thành viên chưa đạt yêu cầu vòng cược (chưa đủ turnover)\n➡️ Quy định xử lý:\nTừ chối rút tiền 3 lần\nNếu hành vi của thành viên vẫn không thay đổi → xử lý theo phương án khấu trừ:\nKhấu trừ toàn bộ lợi nhuận và tiền thưởng, chỉ hoàn trả tiền gốc bằng JCOIN\n\n2️⃣. Thành viên cược tỷ lệ thấp để chạy vòng cược\n✏️ Trường hợp 1:\nThành viên có cược tỷ lệ thấp nhưng không phải tất cả cược đều là tỷ lệ thấp và không phải hành vi chạy vòng cược rõ ràng.\nCó thể từ chối 2–3 lần.\nYêu cầu thành viên tiếp tục cược bình thường.\nNếu sau đó vẫn không thay đổi → Khấu trừ toàn bộ lợi nhuận và tiền thưởng, hoàn trả tiền gốc bằng JCOIN.\n\n✏️ Trường hợp 2:\nThành viên toàn bộ cược đều là tỷ lệ thấp.\nThuộc hành vi vi phạm / chạy vòng cược.\nTrực tiếp khấu trừ toàn bộ lợi nhuận và tiền thưởng, hoàn trả tiền gốc bằng JCOIN.\n\n3️⃣. Thành viên cược All-in (梭哈) / Đối cược (对打)\nTrực tiếp khấu trừ toàn bộ lợi nhuận.\nChỉ hoàn trả tiền gốc (JCOIN).\nNếu hành vi không thay đổi, tiếp tục All-in / Đối cược → Đưa vào danh sách đen (Blacklist).\n\n4️⃣ Kiểm tra rút tiền (Lần 1 – Lần 2 – Lần 3)\nBắt buộc kiểm tra thủ công (manual check).\nKênh quảng cáo (投放): 5 lần vòng cược.\nKhông phải kênh quảng cáo: 8 lần vòng cược.\n\n📌 Lưu ý quan trọng:\nSau mỗi lần kiểm tra, bắt buộc phải ghi chú (remark) vào tài khoản.\nSau khi đã kiểm tra xong lần rút thứ 3, nếu thành viên giao dịch bình thường → xóa ghi chú.\n\n📝 Quy định bổ sung:\nNếu thành viên gửi nhiều yêu cầu rút tiền trong cùng một thời điểm, thì chỉ tính là 1 lần rút tiền."
+},
+  {
+"title": "QUY TRÌNH XỬ LÝ SAI IFSC",
+"content": "QUY TRÌNH XỬ LÝ LỆNH RÚT TIỀN SAI IFSC\n\nKhi phát hiện khách hàng nhập sai mã IFSC:\n- Không từ chối (Reject) lệnh rút tiền.\n- Chuyển lệnh sang trạng thái 待审查 (Submit For Review).\n\nSau khi chuyển trạng thái:\n- Pass thông tin vào nhóm.\n- Tag bộ phận CSKH để hỗ trợ khách hàng chỉnh sửa thông tin IFSC.\n\nSau khi CSKH xác nhận đã hoàn tất việc chỉnh sửa:\n- Hậu đài tiến hành đá lệnh về cho khách hàng.\n- Yêu cầu khách tạo lại lệnh rút tiền mới với thông tin đã được cập nhật chính xác.\n\nLưu ý:\n* Tuyệt đối không từ chối lệnh chỉ vì sai mã IFSC.\n* Tất cả các trường hợp sai IFSC đều phải xử lý theo quy trình trên."
 }
 ]
 ;
