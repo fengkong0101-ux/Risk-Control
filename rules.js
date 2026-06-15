@@ -21,7 +21,7 @@ window.RULES_DATA = [
 },
 {
 "title": "QUY TẮC VÒNG CƯỢC ÁP DỤNG 777IN / 365IN",
-"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nFB/GG: Nạp 100 + KM 17 = 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\nLưu ý\nThe 5x–6x turnover here means total bets divided by total deposits. If the customer completes the required 3x turnover, and the total bets divided by total deposits reaches 5x–6x turnover, then they can withdraw normally.\n\n777IN VỚI 365IN\nKÊNH ĐẦU TƯ ( TIỀN NẠP + KM ) * 3 VÒNG CƯỢC\nKÊNH KHÔNG ĐẦU TƯ ( TIỀN NẠP + TIỀN KM) * 5 VÒNG CƯỢC\n\nNẾU KHÁCH NÓ THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC."
+"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nFB/GG: Nạp 100 + KM 17 = 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\n\nNẾU KHÁCH NÓ THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC."
 },
 {
 "title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500",
