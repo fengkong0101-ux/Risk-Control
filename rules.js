@@ -4,8 +4,8 @@ window.RULES_DATA = [
 "content": "CÁC TRƯỜNG HỢP CẦN GHI CHÚ:\n\n• Thành viên đặt cược tỷ lệ thấp hoặc cược với số tiền quá nhỏ:\nWD ABNORMAL LOW ODDS\n\n• Thành viên chưa hoàn thành yêu cầu vòng cược:\nWD ABNORMAL INCOMPLETE TURNOVER\n\n• Thành viên nhận thưởng vòng quay 500 hoặc thưởng nhóm nhưng không đáp ứng đủ điều kiện tiền nạp:\nWD ABNORMAL INSUFFICIENT DEPOSIT\n\n• Thành viên nhận thưởng nhóm có liên kết IP trùng lặp:\nWD ABNORMAL SELF-INVITE\n\nLƯU Ý:\n\n• Đối với người chơi cũ, chỉ ghi chú những trường hợp có vấn đề về hành vi cược, số dư hoặc có dấu hiệu bất thường.\n\n• Đối với người chơi cũ chỉ chưa hoàn thành vòng cược, không cần ghi chú.\n\n• Nội dung ghi chú phải thống nhất đúng theo các format quy định ở trên."
 },
 {
-"title": "QUY TẮC GHI CHÚ",
-"content": "THÀNH VIÊN ĐẶT CƯỢC TỶ LỆ THẤP , CƯỢC NHỎ : WD ABNORMA LOW ODDS\nKHÔNG ĐỦ VÒNG CƯỢC : WD ABNORMAL INCOMPLETE TURNOVER\nKHÔNG NẠP ĐỦ ĐIỀU KIỆN RÚT TIỀN THƯỞNG 500 HOẶC TIỀN THƯỞNG NHÓM : WD ABNORMAL Insufficient deposit\nNHẬN THƯỞNG NHÓM ĐƯỜNG TRÙNG IP : WD ABNORMAL SELF-INVITE\n\nĐỐI VỚI NGƯỜI CHƠI CŨ CHỈ GHI CHÚ ĐỐI VỚI NHỮNG NGƯỜI CHƠI CÓ VẤN ĐỀ VỀ CƯỢC HOẶC SỐ DƯ , NHỮNG NGƯỜI CHƠI KHÔNG HOÀN THÀNH VÒNG CƯỢC KHÔNG CẦN PHẢI GHI CHÚ."
+"title": "QUY TẮC GHI CHÚ 3 LẦN RÚT ĐẦU TIÊN",
+"content": "3 LẦN RÚT TIỀN ĐẦU TIÊN của khách sau khi duyệt cần ghi chú theo format bên dưới:\n\nFormat:\n[1WD / 2WD / 3WD] + [NORMAL hoặc ABNORMAL] + [Lý do nếu ABNORMAL] + [DATE]\n\nVí dụ:\n\n- 1WD + NORMAL + DATE (11/20/2026)\n- 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n- 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\nCác trạng thái:\n\nNORMAL = Bình thường\nABNORMAL = Bất thường\nLý do bất thường gồm:\n• LOW ODDS = Tỷ lệ thấp\n• ALL IN\n• FIXED LOW BET = Cược cố định số tiền thấp\n• INCOMPLETE TURNOVER = Chưa hoàn thành vòng cược\n• HEAD TO HEAD BETTING = Đánh đối\n\nLưu ý:\n\nNếu khách đã qua lượt duyệt thứ 4 thì xóa ghi chú đi\nKHÔNG áp dụng cách ghi chú này cho khách cũ"
 },
 {
 "title": "QUY TẮC KIỀM TRA NHẬN THƯỞNG NHÓM",
