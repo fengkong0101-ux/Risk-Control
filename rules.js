@@ -2,7 +2,7 @@ window.RULES_DATA = [
 {
 "title": "QUY TẮC GHI CHÚ ĐỐI VỚI THÀNH VIÊN CÓ VẤN ĐỀ",
 "content": "CÁC TRƯỜNG HỢP CẦN GHI CHÚ:\n\n• Thành viên đặt cược tỷ lệ thấp hoặc cược với số tiền quá nhỏ:\nWD ABNORMAL LOW ODDS\n\n• Thành viên chưa hoàn thành yêu cầu vòng cược:\nWD ABNORMAL INCOMPLETE TURNOVER\n\n• Thành viên nhận thưởng vòng quay 500 hoặc thưởng nhóm nhưng không đáp ứng đủ điều kiện tiền nạp:\nWD ABNORMAL INSUFFICIENT DEPOSIT\n\n• Thành viên nhận thưởng nhóm có liên kết IP trùng lặp:\nWD ABNORMAL SELF-INVITE\n\nLƯU Ý:\n\n• Đối với người chơi cũ, chỉ ghi chú những trường hợp có vấn đề về hành vi cược, số dư hoặc có dấu hiệu bất thường.\n\n• Đối với người chơi cũ chỉ chưa hoàn thành vòng cược, không cần ghi chú.\n\n• Nội dung ghi chú phải thống nhất đúng theo các format quy định ở trên."
-}
+},
 {
 "title": "QUY TẮC GHI CHÚ",
 "content": "THÀNH VIÊN ĐẶT CƯỢC TỶ LỆ THẤP , CƯỢC NHỎ : WD ABNORMA LOW ODDS\nKHÔNG ĐỦ VÒNG CƯỢC : WD ABNORMAL INCOMPLETE TURNOVER\nKHÔNG NẠP ĐỦ ĐIỀU KIỆN RÚT TIỀN THƯỞNG 500 HOẶC TIỀN THƯỞNG NHÓM : WD ABNORMAL Insufficient deposit\nNHẬN THƯỞNG NHÓM ĐƯỜNG TRÙNG IP : WD ABNORMAL SELF-INVITE\n\nĐỐI VỚI NGƯỜI CHƠI CŨ CHỈ GHI CHÚ ĐỐI VỚI NHỮNG NGƯỜI CHƠI CÓ VẤN ĐỀ VỀ CƯỢC HOẶC SỐ DƯ , NHỮNG NGƯỜI CHƠI KHÔNG HOÀN THÀNH VÒNG CƯỢC KHÔNG CẦN PHẢI GHI CHÚ."
