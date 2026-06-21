@@ -1,11 +1,15 @@
 window.RULES_DATA = [
-{
-"title": "QUY TẮC GHI CHÚ ĐỐI VỚI THÀNH VIÊN CÓ VẤN ĐỀ",
-"content": "CÁC TRƯỜNG HỢP CẦN GHI CHÚ:\n\n• Thành viên đặt cược tỷ lệ thấp hoặc cược với số tiền quá nhỏ:\nWD ABNORMAL LOW ODDS\n\n• Thành viên chưa hoàn thành yêu cầu vòng cược:\nWD ABNORMAL INCOMPLETE TURNOVER\n\n• Thành viên nhận thưởng vòng quay 500 hoặc thưởng nhóm nhưng không đáp ứng đủ điều kiện tiền nạp:\nWD ABNORMAL INSUFFICIENT DEPOSIT\n\n• Thành viên nhận thưởng nhóm có liên kết IP trùng lặp:\nWD ABNORMAL SELF-INVITE\n\nLƯU Ý:\n\n• Đối với người chơi cũ, chỉ ghi chú những trường hợp có vấn đề về hành vi cược, số dư hoặc có dấu hiệu bất thường.\n\n• Đối với người chơi cũ chỉ chưa hoàn thành vòng cược, không cần ghi chú.\n\n• Nội dung ghi chú phải thống nhất đúng theo các format quy định ở trên."
+  {
+"title": "QUY TẮC KIỂM TRA VÒNG CƯỢC GEM7 UPDATE 21/06/2026",
+"content": "📅 Thời gian áp dụng: 21/06/2026\n\nGEM7\n\n1️⃣ Rút tiền lần đầu (thành viên có nạp tiền)\n• Kênh quảng bá (投放): 3 lần vòng cược\n• Kênh không quảng bá: 7 lần vòng cược\n\n2️⃣ Rút tiền lần đầu (thành viên chưa nạp tiền)\n(Tính theo giá trị tiền thưởng nhận được)\n• Kênh quảng bá (投放): 5 lần vòng cược\n• Kênh không quảng bá: 8 lần vòng cược\n\n3️⃣ Không phải rút tiền lần đầu\n(Xét theo tổng số tiền nạp và tổng doanh thu cược của thành viên)\n• Kênh quảng bá (投放): 5 lần vòng cược\n• Kênh không quảng bá: 8 lần vòng cược\n\n📌 Lưu ý:\n• Thành viên có nạp tiền: áp dụng theo quy tắc vòng cược tương ứng với lần rút tiền.\n• Thành viên không có nạp tiền: tính vòng cược dựa trên giá trị tiền thưởng nhận được.\n• Từ ngày 21/06/2026, toàn bộ quy trình xét duyệt và kiểm soát rủi ro của GEM7 áp dụng theo quy định mới này."
 },
 {
-"title": "QUY TẮC GHI CHÚ 3 LẦN RÚT ĐẦU TIÊN",
+"title": "QUY TẮC GHI CHÚ",
 "content": "3 LẦN RÚT TIỀN ĐẦU TIÊN của khách sau khi duyệt cần ghi chú theo format bên dưới:\n\nFormat:\n[1WD / 2WD / 3WD] + [NORMAL hoặc ABNORMAL] + [Lý do nếu ABNORMAL] + [DATE]\n\nVí dụ:\n\n- 1WD + NORMAL + DATE (11/20/2026)\n- 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n- 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\nCác trạng thái:\n\nNORMAL = Bình thường\nABNORMAL = Bất thường\nLý do bất thường gồm:\n• LOW ODDS = Tỷ lệ thấp\n• ALL IN\n• FIXED LOW BET = Cược cố định số tiền thấp\n• INCOMPLETE TURNOVER = Chưa hoàn thành vòng cược\n• HEAD TO HEAD BETTING = Đánh đối\n\nLưu ý:\n\nNếu khách đã qua lượt duyệt thứ 4 thì xóa ghi chú đi\nKHÔNG áp dụng cách ghi chú này cho khách cũ"
+},
+{
+"title": "QUY TẮC GHI CHÚ",
+"content": "THÀNH VIÊN ĐẶT CƯỢC TỶ LỆ THẤP , CƯỢC NHỎ : WD ABNORMA LOW ODDS\nKHÔNG ĐỦ VÒNG CƯỢC : WD ABNORMAL INCOMPLETE TURNOVER\nKHÔNG NẠP ĐỦ ĐIỀU KIỆN RÚT TIỀN THƯỞNG 500 HOẶC TIỀN THƯỞNG NHÓM : WD ABNORMAL Insufficient deposit\nNHẬN THƯỞNG NHÓM ĐƯỜNG TRÙNG IP : WD ABNORMAL SELF-INVITE\n\nĐỐI VỚI NGƯỜI CHƠI CŨ CHỈ GHI CHÚ ĐỐI VỚI NHỮNG NGƯỜI CHƠI CÓ VẤN ĐỀ VỀ CƯỢC HOẶC SỐ DƯ , NHỮNG NGƯỜI CHƠI KHÔNG HOÀN THÀNH VÒNG CƯỢC KHÔNG CẦN PHẢI GHI CHÚ."
 },
 {
 "title": "QUY TẮC KIỀM TRA NHẬN THƯỞNG NHÓM",
@@ -21,14 +25,14 @@ window.RULES_DATA = [
 },
 {
 "title": "QUY TẮC VÒNG CƯỢC ÁP DỤNG 777IN / 365IN",
-"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 6 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nFB/GG: Nạp 100 + KM 17 = 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\n\nNẾU KHÁCH NÓ THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC."
+"content": "Rút lần đầu\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nRút các lần sau\n(Tính theo tổng nạp tổng vòng cược)\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng.\n- Kênh thường: cược đủ 8 vòng.\n\nCông thức tính\n- (Tổng nạp x nguồn kênh) so sánh với tổng cược, nếu con số vừa ra nhỏ hơn tổng cược thực tế thì hợp lệ.\n\nFB/GG: Nạp 100 + KM 17 = 117 × 3 = 351\nKênh thường: 117 × 5 = 585\n\nLưu ý\nThe 5x–6x turnover here means total bets divided by total deposits. If the customer completes the required 3x turnover, and the total bets divided by total deposits reaches 5x–6x turnover, then they can withdraw normally.\n\n777IN VỚI 365IN\nKÊNH ĐẦU TƯ ( TIỀN NẠP + KM ) * 3 VÒNG CƯỢC\nKÊNH KHÔNG ĐẦU TƯ ( TIỀN NẠP + TIỀN KM) * 5 VÒNG CƯỢC\n\nNẾU KHÁCH NÓ THIẾU MẤY CHỤC VÒNG CƯỢC THÌ DU DI CHO ĐI CŨNG ĐƯỢC."
 },
 {
 "title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500",
 "content": "Đối với người chơi nhận thưởng vòng quay 500.\nTất cả nền tảng ngoại trừ MU777.\n\n1️⃣ . Đối với thành viên nhận thưởng lần đầu\n- Đối với kênh quảng cáo FB nếu bản thân hoặc cấp dưới có nạp tiền vào trò chơi gần đây không quá 7 ngày hoàn thành vòng cược theo yêu cầu thì có thể rút tiền.\n* TIỀN NẠP + TIỀN KM x 5\nVÍ DỤ 100 + 542.32 = 642.32 642.32 x 5 = 3211 TIỀN VÒNG CƯỢC\n- Đối với các kênh tiếng trung nếu người chơi có tổng nạp giữa cấp trên bằng với tổng số tiền người chơi muốn rút thưởng và thời gian nạp gần đây không quá 7 ngày thì có thể rút tiền.\n\n2️⃣ . Đối với thành viên nhận thưởng lần thứ 2\n- Đối với tất cả kênh nếu người chơi có tổng nạp giữa cấp trên và cấp dưới gấp đôi với số tiền người chơi muốn rút thưởng và thời gian nạp gần đây không quá 3 ngày thì có thể rút tiền.\n* LƯU Ý : Cần kiểm tra địa chỉ IP và phương thức đặt cược nếu người chơi có cùng liên kết ip thiết bị với cấp dưới hoặc đặt cược tỷ lệ thấp cần phải khấu trừ phần thưởng."
 },
 {
-"title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500 ÁP DỤNG CHO 777IN / 365IN",
+"title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500 ÁP DỤNG CHO 777IN / 365IN / GEM7",
 "content": "NẾU THÀNH VIÊN CÓ NHẬN KHUYẾN MÃI ( NHẬN THƯỞNG BÀN XOAY )\nYÊU CẦU VÒNG CƯỢC :\n📢KÊNH ĐẦU TƯ YÊU CẦU HOÀN THÀNH ĐỦ 5 VÒNG CƯỢC ( SỐ DƯ HIỆN TẠI + 500 * 5 )\n📢KÊNH KHÔNG ĐẦU TƯ YÊU CẦU HOÀN THÀNH ĐỦ 8 VÒNG CƯỢC ( SỐ DƯ HIỆN TẠI + 500 * 8 )"
 },
 {
