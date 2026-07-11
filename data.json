@@ -229,30 +229,6 @@
 },  
 {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
-    "group": "CƯỢC BẤT THƯỜNG - Squid Game",
-    "title": "CƯỢC BẤT THƯỜNG Squid Game - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Squid Game \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL Squid Game "
-  },  
-{
-    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
-    "group": "CƯỢC BẤT THƯỜNG - Squid Game",
-    "title": "CƯỢC BẤT THƯỜNG Squid Game - KHÓA TK",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Squid Game \n*会员风险评级 : 有问题\n*结论 : 黑名单"
-  },  
-{
-    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
-    "group": "CƯỢC BẤT THƯỜNG - LUCKY 777",
-    "title": "CƯỢC BẤT THƯỜNG LUCKY 777 - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 LUCKY 777 \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL LUCKY 777 "
-  },  
-{
-    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
-    "group": "CƯỢC BẤT THƯỜNG - LUCKY 777",
-    "title": "CƯỢC BẤT THƯỜNG LUCKY 777 - KHÓA TK",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 LUCKY 777 \n*会员风险评级 : 有问题\n*结论 : 黑名单"
-  },  
-{
-    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI - TỪ CHỐI X3 VÒNG CƯỢC",
     "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL Teen Patti "
