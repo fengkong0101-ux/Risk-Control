@@ -9,7 +9,7 @@
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "TỪ CHỐI",
     "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 ×3\n*  WD ABNORMAL FIXED LOW BET  "
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 +\n*  WD ABNORMAL FIXED LOW BET  "
   },
    {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
@@ -87,7 +87,7 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "CHƯA HOÀN THÀNH VÒNG CƯỢC",
     "title": "NHẬN 500 VÒNG QUAY CHƯA HOÀN THÀNH VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER "
+    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n*  WD ABNORMAL INCOMPLETE TURNOVER "
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -129,7 +129,7 @@
     "system": "RUMMY",
     "group": "ĐẶT CƯỢC BẤT THƯỜNG",
     "title": "RUMMY CƯỢC BẤT THƯỜNG (Thời gian bắt đầu và kết thúc ván nhanh (dưới 15s) từ 4-5 đơn liên tục hoặc cược quá ít vòng) - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 有问题\n*结论 : 让会员继续下注,流水 ×3"
+    "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 有问题\n*结论 : 让会员继续下注,流水 +"
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
@@ -147,7 +147,7 @@
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "VI PHẠM TỈ LỆ THẤP (Khách đã có nạp đi nạp lại nhiều lần, chơi tỷ lệ thấp) - TỪ CHỐI x3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中度怀疑\n*结论 :  让会员继续投注，流水 ×3\n*  WD ABNORMAL LOW ODD "
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中度怀疑\n*结论 :  让会员继续投注，流水 +\n*  WD ABNORMAL LOW ODD "
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
@@ -165,13 +165,13 @@
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
   "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER "
+  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n*  WD ABNORMAL INCOMPLETE TURNOVER "
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
   "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
   "title": "NHẬN KHUYẾN MÃI CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER "
+  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n*  WD ABNORMAL INCOMPLETE TURNOVER "
   },
   {
   "system": "KHÔNG ĐỦ VÒNG CƯỢC",
@@ -207,7 +207,7 @@
   "system": "CƯỢC BẤT THƯỜNG",
   "group": "CƯỢC TẤT TAY",
   "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI x3 VÒNG CƯỢC",
-  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL ALL-IN "
+  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 +\n*  WD ABNORMAL ALL-IN "
 },
 {
   "system": "CƯỢC BẤT THƯỜNG",
@@ -231,7 +231,7 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL Teen Patti "
+    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n*  WD ABNORMAL Teen Patti "
   },
 {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
@@ -243,7 +243,7 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
     "title": "CƯỢC BẤT THƯỜNG  7 UP 7 DOWN - TỪ CHỐI X3 VÒNG CƯỢC (Cược dàn điểm, đối ứng, mục tiêu chính là chờ nổ nhân lớn (x50, x100, x500) rơi trúng vào một trong các ô đã đặt)",
-    "content": "**会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL 7 UP  7 DOWN "
+    "content": "**会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n*  WD ABNORMAL 7 UP  7 DOWN "
   },
 {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
@@ -255,7 +255,7 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG -  ROULETTE",
     "title": "CƯỢC BẤT THƯỜNG ROULETTE- TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL ROULETTE "
+    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n*  WD ABNORMAL ROULETTE "
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
