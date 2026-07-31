@@ -274,5 +274,11 @@
     "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
     "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - KHẤU TRỪ TOÀN BỘ",
     "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*时间 : 3\n* 结论：扣除奖励。"
-  }
+  },
+  {
+  "system": "LẠM DỤNG NẠP ĐẦU",
+  "group": "CẤP TRÊN - DƯỚI, TRÙNG IP - KHẤU TRẢ NẠP",
+  "title": "TỰ MỜI CẤP DƯỚI TRÙNG IP LẠM DỤNG NẠP ĐẦU - KHẤU TRẢ NẠP",
+  "content": "*会员ID : \n*拒绝原因 : 拥有相同IP地址和设备的自邀代理线路滥用首存红利，帮助上级代理领取团队奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
+}
 ]
