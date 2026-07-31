@@ -3393,6 +3393,551 @@
         -webkit-text-fill-color: CanvasText;
       }
     }
+  
+
+    /* =========================================================
+       IP / DEVICE DECISION ASSISTANT
+       Added inside the existing "Hướng dẫn nghiệp vụ" page.
+       ========================================================= */
+    .ip-guide-tabs {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+    }
+
+    .ip-guide-tab {
+      min-width: 230px;
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 13px;
+      color: var(--muted);
+      background: var(--bg-soft);
+      box-shadow: var(--shadow-xs, 0 4px 14px rgba(15, 23, 42, .05));
+      font-weight: 750;
+    }
+
+    .ip-guide-tab:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: none;
+      transform: none;
+    }
+
+    .ip-guide-tab.active {
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0 7px 18px rgba(37, 99, 235, .20);
+    }
+
+    .ip-assistant-shell {
+      display: grid;
+      gap: 14px;
+    }
+
+    .ip-assistant-tabs {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 0 2px;
+    }
+
+    .ip-assistant-tab {
+      min-width: 180px;
+      padding: 11px 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+      background: var(--bg-soft);
+      box-shadow: none;
+      font-weight: 750;
+    }
+
+    .ip-assistant-tab:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: none;
+      transform: none;
+    }
+
+    .ip-assistant-tab.active {
+      color: #fff;
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 7px 18px rgba(37, 99, 235, .18);
+    }
+
+    .ip-wizard-panel {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .ip-wizard-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--panel), var(--accent-soft));
+    }
+
+    .ip-wizard-head h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .ip-wizard-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .ip-progress-wrap { width: min(240px, 34vw); min-width: 190px; }
+    .ip-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 650;
+    }
+    .ip-progress {
+      height: 8px;
+      margin-top: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--border);
+    }
+    .ip-progress > div {
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), #06b6d4);
+      transition: width .25s ease;
+    }
+
+    .ip-wizard-body { padding: 24px; }
+    .ip-crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 30px;
+      margin-bottom: 16px;
+    }
+    .ip-crumb {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .ip-question-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel-2);
+    }
+    .ip-step-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .ip-question {
+      margin: 8px 0 7px;
+      color: var(--text);
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+    .ip-question-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ip-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .ip-choice {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      color: var(--text);
+      background: var(--bg-soft);
+      box-shadow: none;
+      text-align: left;
+    }
+    .ip-choice:hover {
+      border-color: var(--accent);
+      background: var(--bg-soft);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, .10);
+      transform: translateY(-2px);
+    }
+    .ip-choice-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 43px;
+      border-radius: 13px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .ip-choice strong { display: block; color: var(--text); font-size: 14px; }
+    .ip-choice small { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    .ip-wizard-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .ip-wizard-actions .ip-action-right { display: flex; gap: 8px; }
+    .ip-wizard-actions button:disabled { cursor: not-allowed; opacity: .45; transform: none; }
+
+    .ip-result {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-soft);
+    }
+    .ip-result-top {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 16px;
+      padding: 22px;
+      border-left: 6px solid var(--ip-result-color, var(--accent));
+      background: var(--ip-result-soft, var(--accent-soft));
+    }
+    .ip-result.success { --ip-result-color: #16a34a; --ip-result-soft: rgba(22, 163, 74, .09); }
+    .ip-result.warning { --ip-result-color: #d97706; --ip-result-soft: rgba(217, 119, 6, .10); }
+    .ip-result.danger { --ip-result-color: #dc2626; --ip-result-soft: rgba(220, 38, 38, .09); }
+    .ip-result.neutral { --ip-result-color: #64748b; --ip-result-soft: rgba(100, 116, 139, .09); }
+    .ip-result-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--ip-result-color);
+      background: var(--bg-soft);
+      font-size: 28px;
+      box-shadow: var(--shadow-xs, 0 4px 12px rgba(15, 23, 42, .07));
+    }
+    .ip-result-kicker {
+      color: var(--ip-result-color);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .ip-result-title {
+      margin: 6px 0 7px;
+      color: var(--text);
+      font-size: clamp(20px, 3vw, 27px);
+      line-height: 1.3;
+    }
+    .ip-result-desc { margin: 0; color: var(--muted); line-height: 1.6; }
+    .ip-path-box { padding: 18px 22px; border-top: 1px solid var(--border); }
+    .ip-path-box > strong { display: block; margin-bottom: 10px; font-size: 12px; }
+    .ip-path-line { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--muted); }
+    .ip-path-pill {
+      padding: 7px 9px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      background: var(--panel-2);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .ip-result-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 16px 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .ip-memory-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .ip-memory-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 9px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+    }
+    .ip-memory-item > span { font-size: 20px; text-align: center; }
+    .ip-memory-item strong { display: block; font-size: 12px; }
+    .ip-memory-item small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .ip-tree-panel {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .ip-tree-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--panel), rgba(34, 197, 94, .07));
+    }
+
+    .ip-tree-head h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .ip-tree-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .ip-tree-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+      max-width: 360px;
+    }
+
+    .ip-tree-legend span {
+      padding: 6px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--bg-soft);
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .ip-tree-body { padding: 22px; }
+
+    .ip-tree-root,
+    .ip-tree-question-node {
+      width: min(520px, 100%);
+      margin: 0 auto;
+      padding: 14px 18px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .ip-tree-root {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      box-shadow: 0 12px 26px rgba(37, 99, 235, .18);
+      font-size: 16px;
+      letter-spacing: .02em;
+    }
+
+    .ip-tree-question-node {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--panel-2);
+      font-size: 14px;
+    }
+
+    .ip-tree-arrow {
+      height: 30px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .ip-tree-branches {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .ip-tree-branch {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel-2);
+    }
+
+    .ip-tree-branch-head {
+      padding: 15px 17px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      background: var(--bg-soft);
+    }
+
+    .ip-tree-branch-head strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .ip-tree-branch-head small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .ip-tree-cases {
+      display: grid;
+      gap: 11px;
+      padding: 14px;
+    }
+
+    .ip-tree-case {
+      padding: 13px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+    }
+
+    .ip-tree-case-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .ip-tree-count {
+      min-width: 34px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0 8px;
+      border-radius: 9px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .ip-tree-rule {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 5px;
+      padding: 9px 10px;
+      border-radius: 11px;
+      color: var(--muted);
+      background: var(--panel-2);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .ip-tree-rule + .ip-tree-rule { margin-top: 7px; }
+
+    .ip-tree-condition {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .ip-tree-outcome {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-weight: 800;
+    }
+
+    .ip-tree-outcome.success { color: #15803d; }
+    .ip-tree-outcome.warning { color: #b45309; }
+    .ip-tree-outcome.danger { color: #dc2626; }
+
+    .ip-tree-note {
+      margin-top: 14px;
+      padding: 11px 13px;
+      border: 1px dashed var(--border-2);
+      border-radius: 12px;
+      color: var(--muted);
+      background: var(--panel-2);
+      font-size: 11px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .ip-rules-panel-note {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: var(--muted);
+      background: var(--panel-2);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .ip-memory-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 650px) {
+      .ip-guide-tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 8px; }
+      .ip-guide-tab { min-width: 0; }
+      .ip-assistant-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+      .ip-assistant-tab { min-width: 0; }
+      .ip-wizard-head, .ip-tree-head { align-items: flex-start; flex-direction: column; }
+      .ip-tree-legend { justify-content: flex-start; max-width: none; }
+      .ip-tree-body { padding: 15px; }
+      .ip-tree-branches { grid-template-columns: 1fr; }
+      .ip-progress-wrap { width: 100%; min-width: 0; }
+      .ip-wizard-body { padding: 15px; }
+      .ip-question-card { padding: 17px; }
+      .ip-choice-grid { grid-template-columns: 1fr; }
+      .ip-wizard-actions { align-items: stretch; flex-direction: column-reverse; }
+      .ip-wizard-actions .ip-action-right { display: grid; grid-template-columns: 1fr 1fr; }
+      .ip-result-top { grid-template-columns: 1fr; }
+      .ip-result-actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .ip-memory-strip { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -3492,8 +4037,159 @@
         </div>
 
         <div id="rulesArea" style="display:none;">
-          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Nhấn vào tiêu đề để mở hoặc thu gọn nội dung.</p></div></div>
-          <div id="rulesList" class="grid"></div>
+          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Xem toàn bộ quy tắc hoặc dùng trợ lý để kiểm tra nhanh và theo dõi cây quyết định.</p></div></div>
+
+          <div class="ip-guide-tabs" role="tablist" aria-label="Chế độ xem hướng dẫn nghiệp vụ">
+            <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ QUY TẮC</button>
+            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý</button>
+          </div>
+
+          <div id="ipMemoryStrip" class="ip-memory-strip" aria-label="Nguyên tắc ghi nhớ nhanh" style="display:none;">
+            <div class="ip-memory-item"><span>🔴</span><div><strong>Nạp lần đầu hàng loạt</strong><small>Ưu tiên siết chặt hoặc khóa.</small></div></div>
+            <div class="ip-memory-item"><span>🟢</span><div><strong>Đã nạp nhiều lần</strong><small>Có thể cho rút bình thường hơn.</small></div></div>
+            <div class="ip-memory-item"><span>👥</span><div><strong>Có liên kết đại lý</strong><small>Xem thêm hoa hồng và cấp trên.</small></div></div>
+            <div class="ip-memory-item"><span>📈</span><div><strong>Càng nhiều tài khoản</strong><small>Mức xử lý càng nghiêm.</small></div></div>
+          </div>
+
+          <section id="ipWizardPanel" class="ip-assistant-shell" style="display:none;" aria-labelledby="ipWizardTab">
+            <div class="ip-assistant-tabs" role="tablist" aria-label="Kiểu hiển thị trợ lý xử lý">
+              <button id="ipQuickTab" class="ip-assistant-tab active" type="button" role="tab" aria-selected="true">🔍 Kiểm Tra Nhanh</button>
+              <button id="ipTreeTab" class="ip-assistant-tab" type="button" role="tab" aria-selected="false">🌳 Cây Quyết Định</button>
+            </div>
+
+            <section id="ipQuickPanel" class="ip-wizard-panel" aria-labelledby="ipQuickTab">
+              <div class="ip-wizard-head">
+                <div>
+                  <h3>Kiểm tra nhanh trùng IP / Thiết bị</h3>
+                  <p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
+                </div>
+                <div class="ip-progress-wrap" aria-label="Tiến độ xử lý">
+                  <div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
+                  <div class="ip-progress"><div id="ipProgressBar"></div></div>
+                </div>
+              </div>
+              <div class="ip-wizard-body">
+                <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
+                <div id="ipWizardContent"></div>
+                <div class="ip-wizard-actions">
+                  <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
+                  <div class="ip-action-right">
+                    <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
+                    <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ QUY TẮC</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="ipTreePanel" class="ip-tree-panel" style="display:none;" aria-labelledby="ipTreeTab">
+              <div class="ip-tree-head">
+                <div>
+                  <h3>Cây quyết định trùng IP / Thiết bị</h3>
+                  <p>Đọc từ trên xuống: xác định liên kết, số lượng tài khoản, sau đó đối chiếu lịch sử nạp và rút.</p>
+                </div>
+                <div class="ip-tree-legend" aria-label="Chú thích kết quả">
+                  <span>🔴 Khóa tài khoản</span>
+                  <span>🟠 Khấu trừ / hoàn trả</span>
+                  <span>🟡 Hạn chế thưởng / hoa hồng</span>
+                  <span>🟢 Cho rút bình thường</span>
+                </div>
+              </div>
+
+              <div class="ip-tree-body">
+                <div class="ip-tree-root">TRÙNG IP / THIẾT BỊ</div>
+                <div class="ip-tree-arrow">↓</div>
+                <div class="ip-tree-question-node">Có liên kết cấp trên – cấp dưới không?</div>
+
+                <div class="ip-tree-branches">
+                  <article class="ip-tree-branch">
+                    <div class="ip-tree-branch-head">
+                      <strong>👤 KHÔNG CÓ LIÊN KẾT</strong>
+                      <small>Đối chiếu theo số lượng tài khoản trong cùng đường dây.</small>
+                    </div>
+                    <div class="ip-tree-cases">
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 2 tài khoản nạp lần đầu và đăng ký gần thời điểm nhau</div>
+                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Một tài khoản đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">3</span> Trùng 3 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 3 nạp lần đầu và 2 tài khoản trước đã từng rút tiền</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa toàn bộ tài khoản trong cùng đường dây.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 3 tài khoản đều chưa từng rút tiền</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho 01 tài khoản rút; hủy/hạn chế tiền thưởng các tài khoản còn lại.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">4+</span> Từ 4 IP/Thiết bị trở lên</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Tất cả đều là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa toàn bộ tài khoản trong cùng đường dây.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                        </div>
+                      </section>
+                    </div>
+                  </article>
+
+                  <article class="ip-tree-branch">
+                    <div class="ip-tree-branch-head">
+                      <strong>👥 CÓ LIÊN KẾT CẤP TRÊN – CẤP DƯỚI</strong>
+                      <small>Ngoài tình trạng nạp, cần xem thêm tài khoản đại lý và hoa hồng cấp trên.</small>
+                    </div>
+                    <div class="ip-tree-cases">
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều nạp lần đầu</div>
+                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho thành viên rút tiền, nhưng hạn chế hoa hồng cấp trên.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều nạp lần đầu</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản đại lý.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho thành viên rút tiền, nhưng hạn chế hoa hồng cấp trên.</div>
+                        </div>
+                      </section>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </section>
+          </section>
+
+          <section id="ipRulesPanel" aria-labelledby="ipRulesTab">
+            <div class="ip-rules-panel-note">Nội dung bên dưới là toàn bộ QUY TẮC nghiệp vụ. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
+            <div id="rulesList" class="grid"></div>
+          </section>
         </div>
       </main>
     </div>
@@ -3528,6 +4224,23 @@ const recentList = document.getElementById('recentList');
 const tabRules = document.getElementById('tabRules');
 const rulesArea = document.getElementById('rulesArea');
 const rulesList = document.getElementById('rulesList');
+const ipWizardTab = document.getElementById('ipWizardTab');
+const ipRulesTab = document.getElementById('ipRulesTab');
+const ipWizardPanel = document.getElementById('ipWizardPanel');
+const ipRulesPanel = document.getElementById('ipRulesPanel');
+const ipMemoryStrip = document.getElementById('ipMemoryStrip');
+const ipQuickTab = document.getElementById('ipQuickTab');
+const ipTreeTab = document.getElementById('ipTreeTab');
+const ipQuickPanel = document.getElementById('ipQuickPanel');
+const ipTreePanel = document.getElementById('ipTreePanel');
+const ipWizardContent = document.getElementById('ipWizardContent');
+const ipCrumbs = document.getElementById('ipCrumbs');
+const ipBackBtn = document.getElementById('ipBackBtn');
+const ipResetBtn = document.getElementById('ipResetBtn');
+const ipOpenRulesBtn = document.getElementById('ipOpenRulesBtn');
+const ipProgressBar = document.getElementById('ipProgressBar');
+const ipProgressLabel = document.getElementById('ipProgressLabel');
+const ipProgressPercent = document.getElementById('ipProgressPercent');
 const categoryList = document.getElementById('categoryList');
 const totalBadge = document.getElementById('totalBadge');
 const favoriteCount = document.getElementById('favoriteCount');
@@ -3542,7 +4255,7 @@ function renderRules() {
   rulesList.innerHTML = '';
 
   if (!Array.isArray(rulesData) || !rulesData.length) {
-    rulesList.innerHTML = '<div class="empty">Không có dữ liệu rules.js</div>';
+    rulesList.innerHTML = '<div class="empty">Không có dữ liệu QUY TẮC</div>';
     return;
   }
 
@@ -3628,6 +4341,424 @@ function renderRules() {
     rulesList.appendChild(card);
   });
 }
+
+
+/* =========================================================
+   DECISION ASSISTANT: TRÙNG IP / THIẾT BỊ
+   This is presentation/decision support only. The existing
+   rules.js renderer and data.json loader remain unchanged.
+   ========================================================= */
+const ipDecisionState = { linked: null, count: null };
+const ipDecisionHistory = [];
+let ipCurrentRenderer = ipRenderStart;
+
+const ipDecisionResults = {
+  normal: {
+    tone: 'success', icon: '✓',
+    title: 'Cho phép thành viên rút tiền bình thường',
+    desc: 'Các tài khoản trước đã có lịch sử nạp đi nạp lại nhiều lần theo điều kiện của quy tắc.'
+  },
+  deductOriginal: {
+    tone: 'warning', icon: '₫',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc',
+    desc: 'Áp dụng khi cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau.'
+  },
+  deductDeposit: {
+    tone: 'warning', icon: '₫',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp',
+    desc: 'Áp dụng khi thành viên và cấp trên đều là tài khoản nạp lần đầu.'
+  },
+  lockAll: {
+    tone: 'danger', icon: '🔒',
+    title: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị',
+    desc: 'Nhóm tài khoản nạp lần đầu hàng loạt thuộc trường hợp xử lý nghiêm theo quy tắc.'
+  },
+  allowOne: {
+    tone: 'warning', icon: '!',
+    title: 'Cho phép 01 tài khoản rút tiền; hủy/hạn chế tiền thưởng các tài khoản còn lại',
+    desc: 'Áp dụng khi cả 3 tài khoản đều chưa từng rút tiền.'
+  },
+  restrictCommission: {
+    tone: 'warning', icon: '⚠',
+    title: 'Cho thành viên rút tiền, nhưng hạn chế hoa hồng của cấp trên',
+    desc: 'Đại lý đã nạp đi nạp lại nhiều lần, nhưng hoa hồng cấp trên vẫn cần bị hạn chế.'
+  },
+  lockAgent: {
+    tone: 'danger', icon: '🔒',
+    title: 'Khóa tài khoản đại lý',
+    desc: 'Áp dụng khi trùng từ 3 IP/thiết bị trở lên và thành viên cùng cấp trên đều nạp lần đầu.'
+  }
+};
+
+function ipEscapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+let ipAssistantMode = 'quick';
+
+function ipSetAssistantMode(mode) {
+  ipAssistantMode = mode === 'tree' ? 'tree' : 'quick';
+  const showQuick = ipAssistantMode === 'quick';
+
+  ipQuickTab.classList.toggle('active', showQuick);
+  ipTreeTab.classList.toggle('active', !showQuick);
+  ipQuickTab.setAttribute('aria-selected', String(showQuick));
+  ipTreeTab.setAttribute('aria-selected', String(!showQuick));
+  ipQuickPanel.style.display = showQuick ? 'block' : 'none';
+  ipTreePanel.style.display = showQuick ? 'none' : 'block';
+}
+
+function ipSetGuideMode(mode) {
+  const showWizard = mode !== 'rules';
+  ipWizardTab.classList.toggle('active', showWizard);
+  ipRulesTab.classList.toggle('active', !showWizard);
+  ipWizardTab.setAttribute('aria-selected', String(showWizard));
+  ipRulesTab.setAttribute('aria-selected', String(!showWizard));
+  ipWizardPanel.style.display = showWizard ? 'grid' : 'none';
+  ipRulesPanel.style.display = showWizard ? 'none' : 'block';
+  ipMemoryStrip.style.display = showWizard ? 'grid' : 'none';
+  if (showWizard) {
+    ipSetAssistantMode(ipAssistantMode);
+  } else {
+    renderRules();
+  }
+}
+
+function ipUpdateProgress(step, total = 5) {
+  const percent = Math.max(20, Math.min(100, Math.round(step / total * 100)));
+  ipProgressBar.style.width = `${percent}%`;
+  ipProgressLabel.textContent = step >= total ? 'Hoàn tất' : `Bước ${step}`;
+  ipProgressPercent.textContent = `${percent}%`;
+}
+
+function ipRenderCrumbs() {
+  ipCrumbs.innerHTML = ipDecisionHistory
+    .map(item => `<span class="ip-crumb">${ipEscapeHtml(item.label)}</span>`)
+    .join('');
+}
+
+function ipChoiceMarkup(option) {
+  return `
+    <button class="ip-choice" type="button" data-value="${ipEscapeHtml(option.value)}">
+      <span class="ip-choice-icon">${ipEscapeHtml(option.icon || '→')}</span>
+      <span>
+        <strong>${ipEscapeHtml(option.label)}</strong>
+        ${option.note ? `<small>${ipEscapeHtml(option.note)}</small>` : ''}
+      </span>
+    </button>`;
+}
+
+function ipAsk({ step, title, note, options, onSelect }) {
+  ipUpdateProgress(step);
+  ipRenderCrumbs();
+  ipWizardContent.innerHTML = `
+    <div class="ip-question-card">
+      <div class="ip-step-label">Câu hỏi ${step}</div>
+      <h3 class="ip-question">${ipEscapeHtml(title)}</h3>
+      <p class="ip-question-note">${ipEscapeHtml(note || 'Chọn phương án đúng với hồ sơ đang kiểm tra.')}</p>
+      <div class="ip-choice-grid">${options.map(ipChoiceMarkup).join('')}</div>
+    </div>`;
+
+  ipWizardContent.querySelectorAll('.ip-choice').forEach(button => {
+    button.addEventListener('click', () => {
+      const option = options.find(item => item.value === button.dataset.value);
+      if (!option) return;
+      ipDecisionHistory.push({ label: option.label, renderer: ipCurrentRenderer });
+      onSelect(option.value);
+    });
+  });
+
+  ipBackBtn.disabled = ipDecisionHistory.length === 0;
+}
+
+function ipRun(renderer) {
+  ipCurrentRenderer = renderer;
+  renderer();
+  ipBackBtn.disabled = ipDecisionHistory.length === 0;
+}
+
+function ipYesNo(step, title, note, yesRenderer, noRenderer) {
+  ipAsk({
+    step, title, note,
+    options: [
+      { value: 'yes', icon: '✓', label: 'Đúng / Có' },
+      { value: 'no', icon: '✕', label: 'Sai / Không' }
+    ],
+    onSelect(value) {
+      ipRun(value === 'yes' ? yesRenderer : noRenderer);
+    }
+  });
+}
+
+function ipRenderStart() {
+  ipDecisionState.linked = null;
+  ipDecisionState.count = null;
+  ipAsk({
+    step: 1,
+    title: 'Có liên kết cấp trên – cấp dưới không?',
+    note: 'Kiểm tra quan hệ đại lý, tuyến trên hoặc tài khoản giới thiệu trong nhóm trùng IP/thiết bị.',
+    options: [
+      { value: 'no', icon: '👤', label: 'Không có liên kết', note: 'Các tài khoản không có quan hệ cấp trên – cấp dưới.' },
+      { value: 'yes', icon: '👥', label: 'Có liên kết', note: 'Có thành viên và tài khoản cấp trên/đại lý.' }
+    ],
+    onSelect(value) {
+      ipDecisionState.linked = value;
+      ipRun(value === 'yes' ? ipRenderLinkedCount : ipRenderUnlinkedCount);
+    }
+  });
+}
+
+function ipRenderUnlinkedCount() {
+  ipAsk({
+    step: 2,
+    title: 'Có bao nhiêu tài khoản trùng IP/thiết bị?',
+    note: 'Chọn theo tổng số tài khoản trong cùng đường dây đang được kiểm tra.',
+    options: [
+      { value: '2', icon: '2', label: 'Trùng 2 tài khoản' },
+      { value: '3', icon: '3', label: 'Trùng 3 tài khoản' },
+      { value: '4plus', icon: '4+', label: 'Từ 4 tài khoản trở lên' }
+    ],
+    onSelect(value) {
+      ipDecisionState.count = value;
+      if (value === '2') ipRun(ipUnlinkedTwoSituation);
+      if (value === '3') ipRun(ipUnlinkedThreeSituation);
+      if (value === '4plus') ipRun(ipUnlinkedFourSituation);
+    }
+  });
+}
+
+function ipRenderLinkedCount() {
+  ipAsk({
+    step: 2,
+    title: 'Có bao nhiêu tài khoản trùng IP/thiết bị?',
+    note: 'Đối với nhóm có liên kết cấp trên – cấp dưới, chọn 2 hoặc từ 3 tài khoản trở lên.',
+    options: [
+      { value: '2', icon: '2', label: 'Trùng 2 tài khoản' },
+      { value: '3plus', icon: '3+', label: 'Từ 3 tài khoản trở lên' }
+    ],
+    onSelect(value) {
+      ipDecisionState.count = value;
+      ipRun(ipLinkedSituation);
+    }
+  });
+}
+
+function ipUnlinkedTwoSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Hai tài khoản thuộc tình huống nào?',
+    note: 'Chọn đúng một trong hai trường hợp được quy định cho nhóm trùng 2 tài khoản.',
+    options: [
+      {
+        value: 'both-first',
+        icon: '①',
+        label: 'Cả 2 đều nạp lần đầu và đăng ký gần thời điểm nhau',
+        note: 'Khấu trừ tiền thưởng và hoàn trả tiền nạp gốc.'
+      },
+      {
+        value: 'one-repeat',
+        icon: '↻',
+        label: 'Có một tài khoản đã nạp đi nạp lại nhiều lần',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      }
+    ],
+    onSelect(value) {
+      ipShowResult(value === 'both-first' ? 'deductOriginal' : 'normal');
+    }
+  });
+}
+
+function ipUnlinkedThreeSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Nhóm 3 tài khoản thuộc tình huống nào?',
+    note: 'Trước tiên xác định lịch sử của hai tài khoản xuất hiện trước trong đường dây.',
+    options: [
+      {
+        value: 'prior-repeat',
+        icon: '↻',
+        label: 'Hai tài khoản trước đã nạp đi nạp lại nhiều lần',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      },
+      {
+        value: 'all-first',
+        icon: '①',
+        label: 'Cả 3 đều là tài khoản nạp lần đầu',
+        note: 'Tiếp tục chọn lịch sử rút tiền để xác định kết quả.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'prior-repeat') {
+        ipShowResult('normal');
+        return;
+      }
+      ipRun(ipUnlinkedThreeFirstDepositSituation);
+    }
+  });
+}
+
+function ipUnlinkedThreeFirstDepositSituation() {
+  ipAsk({
+    step: 4,
+    title: 'Trường hợp nạp lần đầu thuộc tình huống nào?',
+    note: 'Chọn đúng tình trạng rút tiền của nhóm 3 tài khoản.',
+    options: [
+      {
+        value: 'prior-withdrawn',
+        icon: '⇧',
+        label: 'Hai tài khoản trước đã từng rút tiền',
+        note: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị.'
+      },
+      {
+        value: 'none-withdrawn',
+        icon: '0',
+        label: 'Cả 3 tài khoản đều chưa từng rút tiền',
+        note: 'Cho 01 tài khoản rút và hủy/hạn chế tiền thưởng các tài khoản còn lại.'
+      }
+    ],
+    onSelect(value) {
+      ipShowResult(value === 'prior-withdrawn' ? 'lockAll' : 'allowOne');
+    }
+  });
+}
+
+function ipUnlinkedFourSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Nhóm từ 4 tài khoản trở lên thuộc tình huống nào?',
+    note: 'Chọn đúng một trong hai trường hợp được quy định.',
+    options: [
+      {
+        value: 'all-first',
+        icon: '①',
+        label: 'Tất cả đều là tài khoản nạp lần đầu',
+        note: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị.'
+      },
+      {
+        value: 'prior-repeat',
+        icon: '↻',
+        label: 'Các tài khoản trước đều đã nạp đi nạp lại nhiều lần',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      }
+    ],
+    onSelect(value) {
+      ipShowResult(value === 'all-first' ? 'lockAll' : 'normal');
+    }
+  });
+}
+
+function ipLinkedSituation() {
+  const isTwoAccounts = ipDecisionState.count === '2';
+  ipAsk({
+    step: 3,
+    title: isTwoAccounts
+      ? 'Nhóm có liên kết trùng 2 tài khoản thuộc tình huống nào?'
+      : 'Nhóm có liên kết từ 3 tài khoản trở lên thuộc tình huống nào?',
+    note: 'Chọn đúng tình trạng của thành viên và tài khoản cấp trên/đại lý.',
+    options: [
+      {
+        value: 'both-first',
+        icon: '①',
+        label: 'Thành viên và cấp trên đều là tài khoản nạp lần đầu',
+        note: isTwoAccounts
+          ? 'Khấu trừ tiền thưởng và hoàn trả tiền nạp.'
+          : 'Khóa tài khoản đại lý.'
+      },
+      {
+        value: 'agent-repeat',
+        icon: '↻',
+        label: 'Đại lý/cấp trên đã nạp đi nạp lại nhiều lần',
+        note: 'Cho thành viên rút tiền nhưng hạn chế hoa hồng của cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'agent-repeat') {
+        ipShowResult('restrictCommission');
+        return;
+      }
+      ipShowResult(isTwoAccounts ? 'deductDeposit' : 'lockAgent');
+    }
+  });
+}
+
+function ipShowResult(key) {
+  ipCurrentRenderer = () => ipShowResult(key);
+  ipUpdateProgress(5);
+  ipRenderCrumbs();
+
+  const result = ipDecisionResults[key];
+  if (!result) {
+    showToast('Không xác định được kết quả xử lý');
+    ipResetWizard();
+    return;
+  }
+  const pathText = ipDecisionHistory.map(item => item.label).join(' → ');
+  const pathMarkup = ipDecisionHistory
+    .map((item, index) => `${index ? '<span>→</span>' : ''}<span class="ip-path-pill">${ipEscapeHtml(item.label)}</span>`)
+    .join('');
+
+  ipWizardContent.innerHTML = `
+    <div class="ip-result ${ipEscapeHtml(result.tone)}">
+      <div class="ip-result-top">
+        <div class="ip-result-icon">${ipEscapeHtml(result.icon)}</div>
+        <div>
+          <div class="ip-result-kicker">Kết quả xử lý</div>
+          <h3 class="ip-result-title">${ipEscapeHtml(result.title)}</h3>
+          <p class="ip-result-desc">${ipEscapeHtml(result.desc)}</p>
+        </div>
+      </div>
+      <div class="ip-path-box">
+        <strong>Đường dẫn quyết định</strong>
+        <div class="ip-path-line">
+          ${pathMarkup}
+          <span>→</span>
+          <span class="ip-path-pill"><b>${ipEscapeHtml(result.title)}</b></span>
+        </div>
+      </div>
+      <div class="ip-result-actions">
+        <button id="ipCopyResultBtn" class="small" type="button">Copy kết luận</button>
+        <button id="ipRestartResultBtn" class="small ghost" type="button">Làm lại</button>
+      </div>
+    </div>`;
+
+  document.getElementById('ipCopyResultBtn').addEventListener('click', () => {
+    const text = `KẾT QUẢ XỬ LÝ: ${result.title}\n\nLý do: ${result.desc}\n\nĐường dẫn: ${pathText} → ${result.title}`;
+    safeCopy(text)
+      .then(() => showToast('Đã copy kết luận'))
+      .catch(() => showToast('Copy thất bại'));
+  });
+
+  document.getElementById('ipRestartResultBtn').addEventListener('click', ipResetWizard);
+  ipBackBtn.disabled = false;
+}
+
+function ipResetWizard() {
+  ipDecisionHistory.length = 0;
+  ipDecisionState.linked = null;
+  ipDecisionState.count = null;
+  ipRun(ipRenderStart);
+}
+
+ipWizardTab.addEventListener('click', () => ipSetGuideMode('wizard'));
+ipRulesTab.addEventListener('click', () => ipSetGuideMode('rules'));
+ipQuickTab.addEventListener('click', () => ipSetAssistantMode('quick'));
+ipTreeTab.addEventListener('click', () => ipSetAssistantMode('tree'));
+ipOpenRulesBtn.addEventListener('click', () => ipSetGuideMode('rules'));
+ipResetBtn.addEventListener('click', ipResetWizard);
+ipBackBtn.addEventListener('click', () => {
+  if (!ipDecisionHistory.length) return;
+  const previous = ipDecisionHistory.pop();
+  ipRun(previous.renderer || ipRenderStart);
+});
+
+ipResetWizard();
+ipSetAssistantMode('quick');
+ipSetGuideMode('rules');
 
 const THEME_KEY = 'risk_manager_theme_v4';
 const STICKY_KEY = 'risk_manager_sticky_v1';
