@@ -279,12 +279,12 @@
   "system": "LẠM DỤNG NẠP ĐẦU",
   "group": "CẤP TRÊN - DƯỚI, TRÙNG IP - KHẤU TRẢ NẠP",
   "title": "TỰ MỜI CẤP DƯỚI TRÙNG IP LẠM DỤNG NẠP ĐẦU - KHẤU TRẢ NẠP",
-  "content": "*会员ID : \n*拒绝原因 : 拥有相同IP地址和设备的自邀代理线路滥用首存红利，帮助上级代理领取团队奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
+  "content": "*会员ID : \n*拒绝原因 : 拥有相同IP地址和设备的自邀代理线路滥用首存红利，帮助上级代理领取团队奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金"
 },
   {
   "system": "LẠM DỤNG NẠP ĐẦU",
   "group": "LẠM DỤNG NẠP ĐẦU",
   "title": "TẠO NHIỀU TÀI KHOẢN TRÊN 1 THIẾT BỊ, KHÔNG LIÊN KẾT CẤP TRÊN DƯỚI",
-  "content": "会员ID :\n*拒绝原因 : 会员通过同一设备注册多个账号，恶意滥用首存优惠和首存奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金"
+  "content": "会员ID :\n*拒绝原因 : 会员通过同一设备注册多个账号，恶意滥用首存优惠和首存奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
 }
 ]
