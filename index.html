@@ -7184,11 +7184,15 @@ function populateGroupOptions() {
 }
 
 function splitContent(text) {
-  const match = text.match(/^(.*?)(?:\n+)?\*\s*WD ABNORMAL\s*(.*)$/is);
-  if (!match) return { main: text.trim(), note: null };
-  const main = (match[1] || '').trim();
-  const note = ('* WD ABNORMAL ' + (match[2] || '').trim()).trim();
-  return { main, note };
+  if (!text) return { main: '', note: null };
+  const index = text.indexOf('~');
+  if (index === -1) {
+    return { main: text.trim(), note: null };
+  }
+  return {
+    main: text.slice(0, index).trim(),
+    note: text.slice(index).trim()
+  };
 }
 
 function getFilteredData() {
