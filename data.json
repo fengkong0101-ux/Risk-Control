@@ -49,12 +49,6 @@
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
-    "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM",
-    "content": "*会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
-  },
-  {
-    "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG CÓ NẠP",
     "title": "NHẬN 500 VÒNG QUAY NẠP KHÔNG ĐỦ - TỪ CHỐI YÊU CẦU NẠP THÊM",
     "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
