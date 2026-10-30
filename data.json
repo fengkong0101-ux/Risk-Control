@@ -45,6 +45,12 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TRÙNG IP",
     "title": "NHẬN 500 VÒNG QUAY TRÙNG IP - KHẤU TRỪ THƯỞNG",
+    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường"
+  },
+    {
+    "system": "NHẬN 500 VÒNG QUAY",
+    "group": "TRÙNG IP",
+    "title": "NHẬN 500 VÒNG QUAY TRÙNG IP - KHẤU TRỪ THƯỞNG",
     "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường"
   },
   {
